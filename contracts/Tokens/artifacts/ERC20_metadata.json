@@ -1,0 +1,336 @@
+{
+	"compiler": {
+		"version": "0.4.25+commit.59dbf8f1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "name_",
+						"type": "string"
+					},
+					{
+						"name": "symbol_",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"allowance(address,address)": {
+					"details": "See {IERC20-allowance}.\r"
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC20-approve}.\r      * Requirements:\r      * - `spender` cannot be the zero address.\r"
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC20-balanceOf}.\r"
+				},
+				"decreaseAllowance(address,uint256)": {
+					"details": "Atomically decreases the allowance granted to `spender` by the caller.\r      * This is an alternative to {approve} that can be used as a mitigation for\r problems described in {IERC20-approve}.\r      * Emits an {Approval} event indicating the updated allowance.\r      * Requirements:\r      * - `spender` cannot be the zero address.\r - `spender` must have allowance for the caller of at least\r `subtractedValue`.\r"
+				},
+				"increaseAllowance(address,uint256)": {
+					"details": "Atomically increases the allowance granted to `spender` by the caller.\r      * This is an alternative to {approve} that can be used as a mitigation for\r problems described in {IERC20-approve}.\r      * Emits an {Approval} event indicating the updated allowance.\r      * Requirements:\r      * - `spender` cannot be the zero address.\r"
+				},
+				"name()": {
+					"details": "Returns the name of the token.\r"
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token, usually a shorter version of the\r name.\r"
+				},
+				"totalSupply()": {
+					"details": "See {IERC20-totalSupply}.\r"
+				},
+				"transfer(address,uint256)": {
+					"details": "See {IERC20-transfer}.\r      * Requirements:\r      * - `recipient` cannot be the zero address.\r - the caller must have a balance of at least `amount`.\r"
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC20-transferFrom}.\r      * Emits an {Approval} event indicating the updated allowance. This is not\r required by the EIP. See the note at the beginning of {ERC20}.\r      * Requirements:\r      * - `sender` and `recipient` cannot be the zero address.\r - `sender` must have a balance of at least `amount`.\r - the caller must have allowance for ``sender``'s tokens of at least\r `amount`.\r"
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/Tokens/ERC20Token.sol": "ERC20"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Tokens/ERC20Token.sol": {
+			"keccak256": "0xf1bcb2729001a0cf25d0607e6c1b53a82030da0b41bd9055bc5e3fbf7c828857",
+			"urls": [
+				"bzzr://df19d2fb1c8adb67a35cba037539a7f448cdf75b206101695de189223ce7be71"
+			]
+		},
+		"localhost/Tokens/IERC20.sol": {
+			"keccak256": "0xa9ddddb4a526800dcfb8e639ded5b7aa311f2df5aa3fb8d09324fed30a7cb664",
+			"urls": [
+				"bzzr://2764b7293fcada74d8c153df4c5cf7d51d6d86c26553a5059cbf92322bd91402"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,131 @@
+{
+	"compiler": {
+		"version": "0.4.24+commit.e67f0147"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_poltId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getPlotsByOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_maxAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_pesticide",
+						"type": "uint256"
+					}
+				],
+				"name": "addPlot",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_plotId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPlot",
+				"outputs": [
+					{
+						"name": "plotId",
+						"type": "uint256"
+					},
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "maxAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "pesticide",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/Plots.sol": "PlotsToken"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Plots.sol": {
+			"keccak256": "0x8d26a6b9e4e57d1fb281157f65d8d5fab0103c1bed45bb6272536d44846f23f9",
+			"urls": [
+				"bzzr://124ba4a649af68df7b862944e032c793afb23ed5d06086546492f60ebc6f2fc2"
+			]
+		}
+	},
+	"version": 1
+}
