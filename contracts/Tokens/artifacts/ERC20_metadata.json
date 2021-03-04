@@ -84,29 +84,6 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"name": "addedValue",
-						"type": "uint256"
-					}
-				],
-				"name": "increaseAllowance",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"constant": true,
 				"inputs": [
 					{
@@ -137,29 +114,6 @@
 				],
 				"payable": false,
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"name": "subtractedValue",
-						"type": "uint256"
-					}
-				],
-				"name": "decreaseAllowance",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -279,12 +233,6 @@
 				"balanceOf(address)": {
 					"details": "See {IERC20-balanceOf}.\r"
 				},
-				"decreaseAllowance(address,uint256)": {
-					"details": "Atomically decreases the allowance granted to `spender` by the caller.\r      * This is an alternative to {approve} that can be used as a mitigation for\r problems described in {IERC20-approve}.\r      * Emits an {Approval} event indicating the updated allowance.\r      * Requirements:\r      * - `spender` cannot be the zero address.\r - `spender` must have allowance for the caller of at least\r `subtractedValue`.\r"
-				},
-				"increaseAllowance(address,uint256)": {
-					"details": "Atomically increases the allowance granted to `spender` by the caller.\r      * This is an alternative to {approve} that can be used as a mitigation for\r problems described in {IERC20-approve}.\r      * Emits an {Approval} event indicating the updated allowance.\r      * Requirements:\r      * - `spender` cannot be the zero address.\r"
-				},
 				"name()": {
 					"details": "Returns the name of the token.\r"
 				},
@@ -320,9 +268,9 @@
 	},
 	"sources": {
 		"localhost/Tokens/ERC20Token.sol": {
-			"keccak256": "0xf1bcb2729001a0cf25d0607e6c1b53a82030da0b41bd9055bc5e3fbf7c828857",
+			"keccak256": "0xacc8b33d277a2edcb14ae75eba94f80adad462e5acf101a88e3386b6bb93f558",
 			"urls": [
-				"bzzr://df19d2fb1c8adb67a35cba037539a7f448cdf75b206101695de189223ce7be71"
+				"bzzr://8372946ee5d63a9089355386d62f59e903dee374f347cdd88919b2a7d4854ba2"
 			]
 		},
 		"localhost/Tokens/IERC20.sol": {
