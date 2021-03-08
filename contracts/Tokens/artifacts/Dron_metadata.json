@@ -9,15 +9,43 @@
 				"constant": true,
 				"inputs": [
 					{
-						"name": "_poltId",
+						"name": "_minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_maxAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_pesticide",
 						"type": "uint256"
 					}
 				],
-				"name": "ownerOf",
+				"name": "searchDronBy",
 				"outputs": [
 					{
-						"name": "",
-						"type": "address"
+						"name": "dronId",
+						"type": "uint256"
+					},
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "maxAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "pesticideList",
+						"type": "uint256[]"
+					},
+					{
+						"name": "cost",
+						"type": "uint256"
 					}
 				],
 				"payable": false,
@@ -27,7 +55,7 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "getPlotsByOwner",
+				"name": "getDronsByOwner",
 				"outputs": [
 					{
 						"name": "",
@@ -54,11 +82,15 @@
 						"type": "uint256"
 					},
 					{
-						"name": "_pesticide",
+						"name": "_pesticideList",
+						"type": "uint256[]"
+					},
+					{
+						"name": "_cost",
 						"type": "uint256"
 					}
 				],
-				"name": "addPlot",
+				"name": "addDron",
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -68,14 +100,14 @@
 				"constant": true,
 				"inputs": [
 					{
-						"name": "_plotId",
+						"name": "_dronId",
 						"type": "uint256"
 					}
 				],
-				"name": "getPlot",
+				"name": "getDron",
 				"outputs": [
 					{
-						"name": "plotId",
+						"name": "dronId",
 						"type": "uint256"
 					},
 					{
@@ -91,8 +123,31 @@
 						"type": "uint256"
 					},
 					{
-						"name": "pesticide",
+						"name": "pesticideList",
+						"type": "uint256[]"
+					},
+					{
+						"name": "cost",
 						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_dronId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
 					}
 				],
 				"payable": false,
@@ -109,7 +164,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Plots.sol": "Plot"
+			"localhost/Tokens/Dron.sol": "Dron"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -120,10 +175,10 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Plots.sol": {
-			"keccak256": "0x6f2d3cb58b0539a643c3dbe204267085148d710e8ed46a8fc592b7a496d88c7e",
+		"localhost/Tokens/Dron.sol": {
+			"keccak256": "0x1c4cdb3b881a1b113b885b21a9213163a5f50357cdc947eb0abff708da1f376b",
 			"urls": [
-				"bzzr://033ae99b9cf4cb7b3247a946cef7ccafb2c25ddae17ef453b7c5875a166b3224"
+				"bzzr://721ba4ead77770239411ce78dd3f7a82591a7fbfa57689716eb0e6c68af85bd9"
 			]
 		}
 	},

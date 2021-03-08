@@ -1,0 +1,56 @@
+{
+	"compiler": {
+		"version": "0.4.25+commit.59dbf8f1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_role",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/SprayingAppUser.sol": "SprayingAppUser"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/SprayingAppUser.sol": {
+			"keccak256": "0xc98463e9473c5e38f3cdcb80b8a79c542ba115fc3edd05eb8539c56331e3c45e",
+			"urls": [
+				"bzzr://ba44d550ec0a0897d9e75ec77b7c7f52b89305d3558abf9e764a7c61d8ecdbdb"
+			]
+		}
+	},
+	"version": 1
+}

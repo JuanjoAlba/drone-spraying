@@ -1,0 +1,88 @@
+{
+	"compiler": {
+		"version": "0.4.25+commit.59dbf8f1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_role",
+						"type": "uint256"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getUserData",
+				"outputs": [
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "role",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/User.sol": "User"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/User.sol": {
+			"keccak256": "0xedb0d9f4b1c6e2dca3d6467e3e3fc84567b59d14048c7ee10ea2fb3ddda038b0",
+			"urls": [
+				"bzzr://5ff55933f3dfbcae519bc9339507f53c44deb95d2d5bcb29699692f552176e23"
+			]
+		}
+	},
+	"version": 1
+}

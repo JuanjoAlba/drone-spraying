@@ -7,43 +7,6 @@
 		"abi": [
 			{
 				"constant": true,
-				"inputs": [
-					{
-						"name": "tokenId",
-						"type": "uint256"
-					}
-				],
-				"name": "getApproved",
-				"outputs": [
-					{
-						"name": "",
-						"type": "address"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_to",
-						"type": "address"
-					},
-					{
-						"name": "_dronId",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
 				"inputs": [],
 				"name": "getDronsByOwner",
 				"outputs": [
@@ -143,59 +106,6 @@
 				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_dronId",
-						"type": "uint256"
-					}
-				],
-				"name": "spray",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"name": "tokenId",
-						"type": "uint256"
-					}
-				],
-				"name": "Sprayed",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"name": "approved",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"name": "tokenId",
-						"type": "uint256"
-					}
-				],
-				"name": "Approval",
-				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -219,15 +129,9 @@
 	},
 	"sources": {
 		"localhost/Tokens/Dron.sol": {
-			"keccak256": "0x42cc455a05c68521762252b6c6eac04c614bee53dad6bd53522379bb89188af7",
+			"keccak256": "0x2fe728157433918e85fb2b1124bcf9886aeb370a8eccf882339eecc670b8ac37",
 			"urls": [
-				"bzzr://d5e4c4afe5e629673682393eda10a81ed0745caa59747a8ced5c8a676cd3781d"
-			]
-		},
-		"localhost/Tokens/IERC721.sol": {
-			"keccak256": "0xa02053e46b398bc36a286d081a8547a3e8b5e34607b9c59d22a54f10268cf042",
-			"urls": [
-				"bzzr://b09b41a8ce8c6b577aac81678748478bcbfb1aca5ad57ded7aae0bbaf0362da7"
+				"bzzr://d22296cd28fc365378155e5074494535b40196f3712140ee1d4e5160aa606fd7"
 			]
 		}
 	},

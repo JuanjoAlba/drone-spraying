@@ -44,7 +44,7 @@
     
     <!--https://www.educative.io/edpresso/how-to-create-tabs-in-html-->
     <body>
-        <h3>Click on the tabs below:</h3>
+        <h3>Contratación de Drones</h3>
             <div class="tab">
                 <button class="tablinks" onclick="clickHandle(event, 'principal')">TFE</button>
                 <button class="tablinks" onclick="clickHandle(event, 'compania')">Compañia</button>
@@ -60,67 +60,154 @@
                 </div>
 
                 <div id="compania" class="tabcontent">
-                    <table>
+                    <table style="width:100%">
+                        <colgroup>
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                         </colgroup>
+                         <!-- Alta de drones -->
                         <tr>
-                            <td>Alta Dron: </td>
-                        </tr>
-                        <tr>
-                            <td>Nombre: </td>
+                            <th w>Nombre: </th>
                             <td><input type="text" name="" id=""></td>
-                            <td>Atura mínima: </td>
+                            <th>Atura mínima: </th>
                             <td><input type="text" name="" id=""></td>
-                            <td>Altura máxima: </td>
+                            <th>Altura máxima: </th>
                             <td><input type="text" name="" id=""></td>
-                            <td>Coste: </td>
-                            <td><input type="text" name="" id=""></td>
-                        </tr>
-                        <tr>
-                            <td>Pesticida: </td>
+                            <th>Coste: </th>
                             <td><input type="text" name="" id=""></td>
                         </tr>
                         <tr>
-                            <td>---------------------------------------------------------------------------------------</td>
+                            <th>Pesticida: </th>
+                            <td colspan="9" align="left">
+                                <input type="checkbox" id="cbox1" value="1"> Pesticida A</label>
+                                <input type="checkbox" id="cbox2" value="2"> Pesticida B</label>
+                                <input type="checkbox" id="cbox3" value="3"> Pesticida C</label>
+                                <input type="checkbox" id="cbox4" value="4"> Pesticida D</label>
+                                <input type="checkbox" id="cbox5" value="5"> Pesticida E</label>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Asignar trabajo: </td>
-                            <td colspan="2"><input type="button" name="approval_unialumno" value="aprobar" onclick=""></td>
+                            <td colspan="10" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick=""></td>
                         </tr>
                         <tr>
-                            <td>---------------------------------------------------------------------------------------</td>
+                            <th colspan="10">---------------------------------------------------------------------------------------</th>
+                        </tr>
+                        <!-- Consulta de drones -->
+                        <tr>
+                            <th>Consulta Dron: </th>
+                            <td>
+                                <select name="drones" id="parcelas">
+                                    <option value="1">Dron 1</option>
+                                    <option value="2">Dron 2</option>
+                                </select>
+                            </td>
+                            <td><input type="button" name="buttonConsultaDron" value="Dron" onclick=""></td>
+                            <td colspan="5" align="left"><div id="saldo"></div></td>
                         </tr>
                         <tr>
-                            <td>Consulta Pagos: </td>
-                            <td colspan="2"><input type="button" name="approval_unialumno" value="aprobar" onclick=""></td>
+                            <th colspan="10">---------------------------------------------------------------------------------------</th>
+                        </tr>
+                        <!-- Consulta de Saldo -->
+                        <tr>
+                            <th>Consulta Saldo: </th>
+                            <td><input type="button" name="buttonSaldoC" value="Saldo" onclick=""></td>
+                            <td colspan="8" align="left"><div id="saldo"></div></td>
+                        </tr>
+                        <tr>
+                            <th colspan="10">---------------------------------------------------------------------------------------</th>
+                        </tr>
+                        <!-- Asignar trabajos -->
+                        <tr>
+                            <td colspan="2" align="center">Trabajos Solicitados: </td>
+                            <td colspan="3" align="center">
+                                <select name="trabajos" id="trabajos">
+                                    <option value="1">Trabajo 1</option>
+                                    <option value="2">Trabajo 2</option>
+                                </select>
+                            </td>
+                            <td colspan="5" align="center"><div id="carTrabajo"></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="10" align="center"><input type="button" name="asignarTrabajo" value="Asignar Trabajo" onclick=""></td>
                         </tr>
                     </table>
                 </div>
 
                 <div id="propietario" class="tabcontent">
-                    <table>
+                    <table style="width:100%">
+                        <colgroup>
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                            <col span="1" style="width: 13%;">
+                         </colgroup>
                         <tr>
-                            <td>Alta Parcela: </td>
+                            <th w>Nombre: </th>
+                            <td><input type="text" name="" id=""></td>
+                            <th>Atura mínima: </th>
+                            <td><input type="text" name="" id=""></td>
+                            <th>Altura máxima: </th>
+                            <td><input type="text" name="" id=""></td>
+                            <th>Pesticida: </th>
+                            <td colspan="7">
+                                <select name="pesticida" id="pesticida">
+                                    <option value="1">Pesticida A</option>
+                                    <option value="2">Pesticida B</option>
+                                    <option value="3">Pesticida C</option>
+                                    <option value="4">Pesticida D</option>
+                                    <option value="5">Pesticida E</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Nombre: </td>
-                            <td><input type="text" name="" id=""></td>
-                            <td>Atura mínima: </td>
-                            <td><input type="text" name="" id=""></td>
-                            <td>Altura máxima: </td>
-                            <td><input type="text" name="" id=""></td>
-                            <td>Pesticida: </td>
-                            <td><input type="text" name="" id=""></td>
+                            <td colspan="10" align="center"><input type="button" name="altaDron" value="ALTA PARCELA" onclick=""></td>
                         </tr>
                         <tr>
-                            <td>---------------------------------------------------------------------------------------</td>
+                            <th colspan="10">---------------------------------------------------------------------------------------</th>
                         </tr>
                         <tr>
-                            <td>Contratar D
-                                
-                                
-                                ron: </td>
-                            <td><input type="button" name="verifier_unialumno" value="verificar" onclick=""></td>
+                            <th>Consulta Saldo: </th>
+                            <td><input type="button" name="consultaSaldo" value="Saldo" onclick=""></td>
+                            <td colspan="8" align="left"><div id="saldo"></div></td>
                         </tr>
-
+                        <tr>
+                            <th colspan="10">---------------------------------------------------------------------------------------</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">Parcela: </td>
+                            <td colspan="3" align="center">
+                                <select name="parcelas" id="parcelas">
+                                    <option value="1">Parcela 1</option>
+                                    <option value="2">Parcela 2</option>
+                                </select>
+                            </td>
+                            <td colspan="2" align="center">Dron: </td>
+                            <td colspan="3" align="center">
+                                <select name="drones" id="parcelas">
+                                    <option value="1">Dron 1</option>
+                                    <option value="2">Dron 2</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" align="center"><div id="carParcela"></div></td>
+                            <td colspan="5" align="canter"><div id="carDron"></div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="10" align="center"><input type="button" name="contratar" value="Contratar DRON" onclick=""></td>
+                        </tr>
                     </table>
                 </div>
             </form>

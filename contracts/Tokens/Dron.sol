@@ -1,18 +1,15 @@
 pragma solidity ^0.4.25;
 
-import "./IERC721.sol";
-
 /**
  * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard
  * 
  */
-contract DronToken is IERC721 {
+contract Dron {
     
-    
-        // Plot structure
-    struct Dron {
-        uint256 dronId; // Plot Id
-        string name; // plot's name
+    // Dron structure
+    struct structDron {
+        uint256 dronId; // Dron Id
+        string name; // dron's name
         uint256 minAltitude; // minimun altitude
         uint256 maxAltitude; // maximun altitude
         uint256[] pesticideList; // Pesticide (from pesticideList)
@@ -20,9 +17,9 @@ contract DronToken is IERC721 {
     }
     
     // Counter for dron Id's
-    uint256 internal dronCounter;
+    uint8 internal dronCounter;
     // Mappring for drons, Id to struct
-    mapping (uint256 => Dron) internal dronList;
+    mapping (uint256 => structDron) internal dronList;
     // Mapping dron Id to company address
     mapping (uint256 => address) internal dronToCompany;
     // Mapping drons by owner
@@ -32,10 +29,13 @@ contract DronToken is IERC721 {
     
     function addDron (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) public {
         
-        // Add new plot to owner plot List
+        // Check that address is a company
+        // require( addres != null && role == 0, "Address does not belongs to an owner");
+        
+        // Add new dron to owner dron List
         dronToCompany[dronCounter] = msg.sender;
         
-        // Add plot to owner
+        // Add dron to owner
         dronList[dronCounter].dronId = dronCounter;
         dronList[dronCounter].name = _name;
         dronList[dronCounter].minAltitude = _minAltitude;
@@ -46,7 +46,7 @@ contract DronToken is IERC721 {
         // Add drons id to company's dron List
         dronsByCompany[msg.sender].push(dronCounter);
         
-        // Increment plot´s Id
+        // Increment dron´s Id
         dronCounter += 1;
         
         // Falta return
@@ -58,39 +58,6 @@ contract DronToken is IERC721 {
         // address owner = dronToCompany[_dronId];
         // require(owner != address(0), "Dron: owner query for nonexistent token");
         return dronToCompany[_dronId];
-    }
-    
-    function approve(address _to, uint256 _dronId) public {
-        
-        address owner = ownerOf(_dronId);
-        
-        require(_to != owner, "Dron: approval to current owner");
-        require(msg.sender == owner, "Dron: approve caller is not owner");
-
-        dronApprovals[_dronId] = _to;
-        emit Approval(owner, _to, _dronId);
-    }
-    
-    function getApproved(uint256 tokenId) public view returns (address) {
-        
-        require(exists(tokenId), "Dron: approved query for nonexistent token");
-
-        return dronApprovals[tokenId];
-    }
-    
-    function exists(uint256 _dronId) internal view returns (bool) {
-        
-        return dronToCompany[_dronId] != address(0);
-    }
-    
-    function spray (uint256 _dronId) public {
-        
-        require (dronApprovals[_dronId] == msg.sender, "Dron: Use not approved for dron");
-        
-        // set approval to no one as dros as get used
-        dronApprovals[_dronId] = address(0);
-        
-        emit Sprayed(msg.sender, _dronId);
     }
 
     function getDron(uint256 _dronId) public constant returns (
@@ -115,5 +82,55 @@ contract DronToken is IERC721 {
     function getDronsByOwner() external view returns (uint256[]) {
         
         return dronsByCompany[msg.sender];
+    }
+    
+    function searchDronBy(uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) public constant returns (
+            uint256 dronId,
+            string name,
+            uint256 minAltitude,
+            uint256 maxAltitude,
+            uint256[] pesticideList,
+            uint256 cost)
+        {
+        
+        bool _find = false;
+        for(uint8 i=0; i<= dronCounter && !_find; i++){
+            
+            if (checkHigh(i, _minAltitude, _maxAltitude) && checkPesticide(i, _pesticide)) {
+                dronId = i;
+                _find = true;
+            }
+        }
+        
+        
+        return (
+            dronList[dronId].dronId,
+            dronList[dronId].name,
+            dronList[dronId].minAltitude,
+            dronList[dronId].maxAltitude,
+            dronList[dronId].pesticideList,
+            dronList[dronId].cost
+        );
+    }
+    
+    function checkHigh (uint256 _dronId, uint256 _minAltitude, uint256 _maxAltitude) internal view returns (bool dronValid) {
+        
+        dronValid = dronList[_dronId].minAltitude <= _minAltitude && dronList[_dronId].maxAltitude <= _maxAltitude;
+        return dronValid;
+    }
+    
+    function checkPesticide (uint256 _dronId, uint256 _pesticide) internal view returns (bool dronValid) {
+        
+        dronValid = false;
+        
+        for(uint8 i=0; i <= dronList[_dronId].pesticideList.length && !dronValid; i++){
+            
+            if (dronList[_dronId].pesticideList[i] == _pesticide) {
+                dronValid = true;
+                break;
+            }
+        }
+        
+        return dronValid;
     }
 }

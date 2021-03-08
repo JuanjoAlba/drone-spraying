@@ -8,7 +8,7 @@ contract Plot {
     
     // Plot structure
     struct PlotStruct {
-        uint256 plotId; // Plot Id  ¿Necesito esto?
+        uint256 plotId; // Plot Id 
         string name; // plot's name
         uint256 minAltitude; // minimun altitude
         uint256 maxAltitude; // maximun altitude
@@ -24,7 +24,10 @@ contract Plot {
     // Mapping plots by owner
     mapping (address => uint256[]) internal plotsByOwner;
     
-    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) public {
+    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external {
+        
+        // Check that address is an owner
+        // require( addres != null && role == 1, "Address does not belongs to an owner");
         
         // Add plot to owner
         plotList[plotCounter].plotId = plotCounter;
@@ -44,7 +47,7 @@ contract Plot {
 
     }
     
-    function getPlot(uint256 _plotId) public constant returns (
+    function getPlot(uint256 _plotId) external constant returns (
             uint256 plotId,
             string name,
             uint256 minAltitude,
@@ -70,5 +73,7 @@ contract Plot {
         
         return plotToOwner[_poltId];
     }
+    
+    
 
 }

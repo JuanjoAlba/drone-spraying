@@ -1,0 +1,175 @@
+{
+	"compiler": {
+		"version": "0.4.25+commit.59dbf8f1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_plotId",
+						"type": "uint256"
+					},
+					{
+						"name": "_appAddress",
+						"type": "address"
+					},
+					{
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "toHireDron",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_plotToSpray",
+						"type": "uint256"
+					}
+				],
+				"name": "spray",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"name": "_role",
+						"type": "uint256"
+					}
+				],
+				"name": "addUser",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "plotId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Request",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "plotId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "dronId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "fumigationFinished",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/SprayingDroneApp.sol": "SprayingDroneApp"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Plots.sol": {
+			"keccak256": "0x6f2d3cb58b0539a643c3dbe204267085148d710e8ed46a8fc592b7a496d88c7e",
+			"urls": [
+				"bzzr://033ae99b9cf4cb7b3247a946cef7ccafb2c25ddae17ef453b7c5875a166b3224"
+			]
+		},
+		"localhost/SprayingDroneApp.sol": {
+			"keccak256": "0xa8a9e987dfdb64f727ff58b6563a468e62121e7ab9416dd0a68e73bebb4539ea",
+			"urls": [
+				"bzzr://35f47edaca471c61ed260b5fa462b7fb04b7aee59ffab10dbd46d30c274b049d"
+			]
+		},
+		"localhost/Tokens/Dron.sol": {
+			"keccak256": "0x1c4cdb3b881a1b113b885b21a9213163a5f50357cdc947eb0abff708da1f376b",
+			"urls": [
+				"bzzr://721ba4ead77770239411ce78dd3f7a82591a7fbfa57689716eb0e6c68af85bd9"
+			]
+		},
+		"localhost/Tokens/ERC20Token.sol": {
+			"keccak256": "0x1e94b0127e1ffe3eda440db32814e57437eb02f296d033fbae23a28eee81fdab",
+			"urls": [
+				"bzzr://cab84e84fc959f8922092d02fa5a116812ab55364ed8aa1834e83ab632418246"
+			]
+		},
+		"localhost/Tokens/IERC20.sol": {
+			"keccak256": "0xa9ddddb4a526800dcfb8e639ded5b7aa311f2df5aa3fb8d09324fed30a7cb664",
+			"urls": [
+				"bzzr://2764b7293fcada74d8c153df4c5cf7d51d6d86c26553a5059cbf92322bd91402"
+			]
+		},
+		"localhost/User.sol": {
+			"keccak256": "0xedb0d9f4b1c6e2dca3d6467e3e3fc84567b59d14048c7ee10ea2fb3ddda038b0",
+			"urls": [
+				"bzzr://5ff55933f3dfbcae519bc9339507f53c44deb95d2d5bcb29699692f552176e23"
+			]
+		}
+	},
+	"version": 1
+}

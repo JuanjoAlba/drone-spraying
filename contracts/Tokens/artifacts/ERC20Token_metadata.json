@@ -290,7 +290,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Tokens/ERC20Token.sol": "ERC20"
+			"localhost/Tokens/ERC20Token.sol": "ERC20Token"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -302,9 +302,9 @@
 	},
 	"sources": {
 		"localhost/Tokens/ERC20Token.sol": {
-			"keccak256": "0xe182eeb26e3eb54bbbbe9cb14d66e5d722f1c79aacf890880533017ad5e0c3c0",
+			"keccak256": "0x1e94b0127e1ffe3eda440db32814e57437eb02f296d033fbae23a28eee81fdab",
 			"urls": [
-				"bzzr://5ea87233c156d1a7998440831f0ac13e3b665c20380d5a3f7d875c04a4df6324"
+				"bzzr://cab84e84fc959f8922092d02fa5a116812ab55364ed8aa1834e83ab632418246"
 			]
 		},
 		"localhost/Tokens/IERC20.sol": {
