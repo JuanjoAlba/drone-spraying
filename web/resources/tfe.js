@@ -77,3 +77,41 @@ function getTokens(address) {
     });
 }
 
+/*
+ * Method to create users 
+ *
+ * Receives user account and role (0 - company, 1 - owner)
+ */
+function addDron(name, role) {
+
+    sprayingInstance.methods.addDron(companyAccount, name, minAltitude, maxAltitude, pesticide).send({from: cuentaUni, gas: 1000000}, function(error, result){
+        if(!error){
+            console.log(result);
+            document.getElementById('console').innerHTML = document.getElementById('console').innerHTML+"<br>"+result;
+        }
+        else {
+            document.getElementById('console').innerHTML = "Se ha producido un error";
+            console.error(error);
+        }
+    });        
+}
+
+/*
+ * Method to create users 
+ *
+ * Receives user account and role (0 - company, 1 - owner)
+ */
+function addPlot(name, role) {
+
+    sprayingInstance.methods.addPlot(ownerAccount, name, minAltitude, maxAltitude, pesticide).send({from: cuentaUni, gas: 1000000}, function(error, result){
+        if(!error){
+            console.log(result);
+            document.getElementById('console').innerHTML = document.getElementById('console').innerHTML+"<br>"+result;
+        }
+        else {
+            document.getElementById('console').innerHTML = "Se ha producido un error";
+            console.error(error);
+        }
+    });        
+}
+

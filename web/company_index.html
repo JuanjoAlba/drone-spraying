@@ -1,0 +1,119 @@
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+        <link rel="stylesheet" href="./resources/tfe.css">
+        <script src="./resources/tfe.js"></script>
+        <script>
+
+            // Función para manejar las pestañas
+            function clickHandle(evt, idMenu) {
+              let i, menucontent, tablinks;
+            
+              // This is to clear the previous clicked content.
+              menucontent = document.getElementsByClassName("menucontent");
+              for (i = 0; i < menucontent.length; i++) {
+                menucontent[i].style.display = "none";
+              }
+            
+              // Set the tab to be "active".
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+            
+              // Display the clicked tab and set it to active.
+              document.getElementById(idMenu).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+
+
+        </script>
+
+    </head>
+    
+    <!--https://www.educative.io/edpresso/how-to-create-tabs-in-html-->
+    <body>
+        <div class="sidenav">
+            <button class="tablinks" onclick="clickHandle(event, 'altaDron')">ALTA DRON</button>
+            <button class="tablinks" onclick="clickHandle(event, 'consultaSaldo')">CONSULTA SALDO</button>
+            <button class="tablinks" onclick="clickHandle(event, 'asignarTrabajo')">TRABAJOS</button>
+        </div>
+        <div class="main">
+            
+            <!-- Alta de drones -->
+            <div id="altaDron" class="menucontent">
+                <table style="width:100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr>
+                        <th w>Nombre: </th>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Atura m&#237;nima: </th>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Altura m&#225;xima: </th>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Coste: </th>
+                        <td><input type="text" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Pesticidas: </th>
+                        <td colspan="9" align="left">
+                            <input type="checkbox" id="cbox1" value="1"> Pesticida A</label>
+                            <input type="checkbox" id="cbox2" value="2"> Pesticida B</label>
+                            <input type="checkbox" id="cbox3" value="3"> Pesticida C</label>
+                            <input type="checkbox" id="cbox4" value="4"> Pesticida D</label>
+                            <input type="checkbox" id="cbox5" value="5"> Pesticida E</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick=""></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Consulta de saldo -->
+            <div id="consultaSaldo" class="menucontent">
+                <table style="width:100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr>
+                        <th>Consulta Saldo: </th>
+                        <td><input type="button" name="buttonSaldoC" value="Saldo" onclick=""></td>
+                        <td colspan="8" align="left"><div id="saldo"></div></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Asignar trabajos -->
+            <div id="asignarTrabajo" class="menucontent">
+                <table style="width:100%">
+                    <colgroup>
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 50%;">
+                    </colgroup>
+                    <tr>
+                        <th align="center">Trabajos Solicitados: </th>
+                        <td align="center">
+                            <select name="trabajos" id="trabajos">
+                                <option value="1">Trabajo 1</option>
+                                <option value="2">Trabajo 2</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="button" name="asignarTrabajoButton" value="Asignar Trabajo" onclick=""></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

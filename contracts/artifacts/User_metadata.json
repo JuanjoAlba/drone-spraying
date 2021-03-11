@@ -49,12 +49,6 @@
 				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "constructor"
 			}
 		],
 		"devdoc": {
@@ -77,10 +71,16 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/User.sol": {
-			"keccak256": "0xedb0d9f4b1c6e2dca3d6467e3e3fc84567b59d14048c7ee10ea2fb3ddda038b0",
+		"localhost/Interfaces/IUser.sol": {
+			"keccak256": "0x751c5567d1abbbcae68b7f1df1ea8cb406ff24bbc2020980dbf8e4ec9482f70e",
 			"urls": [
-				"bzzr://5ff55933f3dfbcae519bc9339507f53c44deb95d2d5bcb29699692f552176e23"
+				"bzzr://4a68435f05712bd42332b1d4560c8c318e2c50f73b5ec15785f9569f92c8fe03"
+			]
+		},
+		"localhost/User.sol": {
+			"keccak256": "0x0c30593a46ec4876efa9fec2a693cd9c36fe22f62a249751ebb05bbedebf2185",
+			"urls": [
+				"bzzr://2f02d6f73cdd2c3014c42f08f364714c97782a1dce931873972509c7e61d150c"
 			]
 		}
 	},

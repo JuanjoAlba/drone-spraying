@@ -1,10 +1,13 @@
 pragma solidity ^0.4.25;
 
-/**
- * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard
- * 
+import "./Interfaces/IPlot.sol";
+
+/*
+ * @title Implementation for plots
+ *
+ * @author Juan José Alba
  */
-contract Plot {
+contract Plot is IPlot {
     
     // Plot structure
     struct PlotStruct {
@@ -24,7 +27,7 @@ contract Plot {
     // Mapping plots by owner
     mapping (address => uint256[]) internal plotsByOwner;
     
-    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external {
+    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable returns (uint256) {
         
         // Check that address is an owner
         // require( addres != null && role == 1, "Address does not belongs to an owner");
@@ -44,7 +47,8 @@ contract Plot {
         
         // Increment plot´s Id
         plotCounter += 1;
-
+        
+        return plotList[plotCounter].plotId;
     }
     
     function getPlot(uint256 _plotId) external constant returns (

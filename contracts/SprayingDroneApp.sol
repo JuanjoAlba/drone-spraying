@@ -1,17 +1,25 @@
 pragma solidity ^0.4.25;
 
-import "./Tokens/ERC20Token.sol";
-import "./User.sol";
-import "./Plots.sol";
-import "./Tokens/Dron.sol";
+import "./Interfaces/IERC20.sol";
+import "./Interfaces/IUser.sol";
+import "./Interfaces/IPlot.sol";
+import "./Interfaces/IDron.sol";
 
+/*
+ * @title Implementation for users
+ *
+ * @dev This contract manages the aplication, adding drons to companies, plots to owners,
+ *      managing request for spraying and working as a proxy for payments.
+ *
+ * @author Juan José Alba
+ */
 contract SprayingDroneApp {
     
     // Contracts
-    User userContract;
-    Plot plotContract;
-    Dron dronContract;
-    ERC20Token tokenContract;
+    IUser userContract;
+    IPlot plotContract;
+    IDron dronContract;
+    IERC20 tokenContract;
     
     struct records {
         uint256 plotId;
@@ -26,16 +34,49 @@ contract SprayingDroneApp {
     mapping (uint256 => records) internal workPerformed;
     
     // events
-    event Request(address indexed from, uint256 plotId, uint256 amount);
+    event jobRequested(address indexed from, uint256 plotId, uint256 amount);
     event fumigationFinished(uint256 plotId, uint256 dronId, uint256 value);
     
     // Empty constructor
-    constructor () public {}
+    constructor (address _userC, address _plotC, address _dronC, address _tokenC) public payable {
+        
+        userContract = IUser(_userC);
+        plotContract = IPlot(_plotC);
+        dronContract = IDron(_dronC);
+        tokenContract = IERC20(_tokenC);
+        
+    }
     
     
     function addUser (address _address, string _name, uint256 _role) public payable {
         
         userContract.addUser(_address, _name, _role);
+    }
+    
+    function addDron (address _address, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) public payable returns (uint256) {
+        
+        // Check that address is a company
+        string memory _company;
+        uint256 _role;
+        (_company, _role) = userContract.getUserData(_address);
+        require( _address != address(0) && _role == 0, "Address does not belongs to a company");
+        
+        uint256 _dronId = dronContract.addDron(_name, _minAltitude, _maxAltitude, _pesticideList, _cost);
+        
+        return _dronId;
+    }
+    
+    function addPlot (address _address, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) public payable returns (uint256) {
+        
+        // Check that address is a company
+        string memory _company;
+        uint256 _role;
+        (_company, _role) = userContract.getUserData(_address);
+        require( _address != address(0) && _role == 1, "Address does not belongs to an owner");
+        
+        uint256 _plotId = plotContract.addPlot(_name, _minAltitude, _maxAltitude, _pesticide);
+        
+        return _plotId;
     }
     
     /*
@@ -55,7 +96,7 @@ contract SprayingDroneApp {
         tokenContract.approve(_appAddress, _amount);
         
         // 4º Emit event (plot to spray)
-        emit Request(msg.sender, _plotId, _amount);
+        emit jobRequested(msg.sender, _plotId, _amount);
         
     }
     
@@ -64,7 +105,7 @@ contract SprayingDroneApp {
      *
      * This operation is called by the company
      */
-    function spray (uint256 _plotToSpray) public {
+    function sprayPlot (uint256 _plotToSpray) public {
         
         // Plot values
         uint256 _plotId;

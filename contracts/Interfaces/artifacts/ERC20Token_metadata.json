@@ -181,6 +181,21 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -302,9 +317,9 @@
 	},
 	"sources": {
 		"localhost/Tokens/ERC20Token.sol": {
-			"keccak256": "0x1e94b0127e1ffe3eda440db32814e57437eb02f296d033fbae23a28eee81fdab",
+			"keccak256": "0x043d22e73a20f7cc71493e9af6785d07b969f3d4a13372e616e39ca707194f69",
 			"urls": [
-				"bzzr://cab84e84fc959f8922092d02fa5a116812ab55364ed8aa1834e83ab632418246"
+				"bzzr://bcfe84446e96b8f16bb7644cee22d0667fb2102b44f10feeca7cc91c14403362"
 			]
 		},
 		"localhost/Tokens/IERC20.sol": {

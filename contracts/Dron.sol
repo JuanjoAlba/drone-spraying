@@ -1,10 +1,13 @@
 pragma solidity ^0.4.25;
 
-/**
- * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard
- * 
+import "./Interfaces/IDron.sol";
+
+/*
+ * @title Implementation for drons
+ *
+ * @author Juan José Alba
  */
-contract Dron {
+contract Dron is IDron{
     
     // Dron structure
     struct structDron {
@@ -27,10 +30,7 @@ contract Dron {
     // Mapping from dron Id to approved address
     mapping (uint256 => address) private dronApprovals;
     
-    function addDron (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) public {
-        
-        // Check that address is a company
-        // require( addres != null && role == 0, "Address does not belongs to an owner");
+    function addDron (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) external payable returns (uint256) {
         
         // Add new dron to owner dron List
         dronToCompany[dronCounter] = msg.sender;
@@ -50,7 +50,7 @@ contract Dron {
         dronCounter += 1;
         
         // Falta return
-
+        return dronList[dronCounter].dronId;
     }
     
     function ownerOf(uint256 _dronId) public view returns (address) {
