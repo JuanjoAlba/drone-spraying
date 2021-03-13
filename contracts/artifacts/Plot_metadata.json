@@ -25,22 +25,12 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "getPlotsByOwner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
+					{
+						"name": "_addres",
+						"type": "address"
+					},
 					{
 						"name": "_name",
 						"type": "string"
@@ -71,6 +61,20 @@
 			},
 			{
 				"constant": true,
+				"inputs": [],
+				"name": "getPlotsByOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
 				"inputs": [
 					{
 						"name": "_plotId",
@@ -79,10 +83,6 @@
 				],
 				"name": "getPlot",
 				"outputs": [
-					{
-						"name": "plotId",
-						"type": "uint256"
-					},
 					{
 						"name": "name",
 						"type": "string"
@@ -126,15 +126,15 @@
 	},
 	"sources": {
 		"localhost/Interfaces/IPlot.sol": {
-			"keccak256": "0xec6dc3c0668e10acefdcfa73e77cc83b9d5c4959e8cd8f48c1a154f5b7c17eec",
+			"keccak256": "0x10dcf28162f1176f34dc27b6711fbce74a2adc88c85ca4ef8fc830770c754a51",
 			"urls": [
-				"bzzr://42448864df2334e144d66d7630a1b379984751d075e03529b50ffb07c83cb183"
+				"bzzr://07848d085398826bdfc612bd4f24e0a9fbe627b235a691fa0bc6a48d0fa1d708"
 			]
 		},
 		"localhost/Plot.sol": {
-			"keccak256": "0xddbe85e3d105f01b08a72119fd522a1d61212b26fafae27eb2f1938e70aa4e0e",
+			"keccak256": "0x050838355638c17057d440ebb3b4101cf8985e380c9a68144018cae03636a5a6",
 			"urls": [
-				"bzzr://cc30107226c7e414b6bc3de2e9cca0af69f4c249eaf0e35436bff5a7640ea502"
+				"bzzr://481fd8e2ae09cc34280cc6a6b881eb8a19d0026837cd149e40b5231e8ae8bc4b"
 			]
 		}
 	},

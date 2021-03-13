@@ -44,78 +44,20 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"addDron(string,uint256,uint256,uint256[],uint256)": "4b61f5db",
+			"addDron(address,string,uint256,uint256,uint256[],uint256)": "0c4d5726",
 			"getDron(uint256)": "5a3d1a18",
-			"getDronsByOwner()": "2fc73a6b",
 			"ownerOf(uint256)": "6352211e",
-			"searchDronBy(uint256,uint256,uint256)": "077f538c"
+			"searchDronBy(address,uint256,uint256,uint256)": "8f5b01b4"
 		}
 	},
 	"abi": [
 		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "_minAltitude",
-					"type": "uint256"
-				},
-				{
-					"name": "_maxAltitude",
-					"type": "uint256"
-				},
-				{
-					"name": "_pesticide",
-					"type": "uint256"
-				}
-			],
-			"name": "searchDronBy",
-			"outputs": [
-				{
-					"name": "dronId",
-					"type": "uint256"
-				},
-				{
-					"name": "name",
-					"type": "string"
-				},
-				{
-					"name": "minAltitude",
-					"type": "uint256"
-				},
-				{
-					"name": "maxAltitude",
-					"type": "uint256"
-				},
-				{
-					"name": "pesticideList",
-					"type": "uint256[]"
-				},
-				{
-					"name": "cost",
-					"type": "uint256"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "getDronsByOwner",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256[]"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
 			"constant": false,
 			"inputs": [
+				{
+					"name": "_addres",
+					"type": "address"
+				},
 				{
 					"name": "_name",
 					"type": "string"
@@ -159,10 +101,6 @@
 			"name": "getDron",
 			"outputs": [
 				{
-					"name": "dronId",
-					"type": "uint256"
-				},
-				{
 					"name": "name",
 					"type": "string"
 				},
@@ -200,6 +138,41 @@
 				{
 					"name": "",
 					"type": "address"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"name": "_address",
+					"type": "address"
+				},
+				{
+					"name": "_minAltitude",
+					"type": "uint256"
+				},
+				{
+					"name": "_maxAltitude",
+					"type": "uint256"
+				},
+				{
+					"name": "_pesticide",
+					"type": "uint256"
+				}
+			],
+			"name": "searchDronBy",
+			"outputs": [
+				{
+					"name": "dronId",
+					"type": "uint256"
+				},
+				{
+					"name": "cost",
+					"type": "uint256"
 				}
 			],
 			"payable": false,

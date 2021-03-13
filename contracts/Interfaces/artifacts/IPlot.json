@@ -44,7 +44,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"addPlot(string,uint256,uint256,uint256)": "c9865753",
+			"addPlot(address,string,uint256,uint256,uint256)": "989d9683",
 			"getPlot(uint256)": "cfdd4fbd",
 			"getPlotsByOwner()": "bcafec5c",
 			"ownerOf(uint256)": "6352211e"
@@ -71,22 +71,12 @@
 			"type": "function"
 		},
 		{
-			"constant": true,
-			"inputs": [],
-			"name": "getPlotsByOwner",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256[]"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
 			"constant": false,
 			"inputs": [
+				{
+					"name": "_addres",
+					"type": "address"
+				},
 				{
 					"name": "_name",
 					"type": "string"
@@ -117,6 +107,20 @@
 		},
 		{
 			"constant": true,
+			"inputs": [],
+			"name": "getPlotsByOwner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
 			"inputs": [
 				{
 					"name": "_plotId",
@@ -125,10 +129,6 @@
 			],
 			"name": "getPlot",
 			"outputs": [
-				{
-					"name": "plotId",
-					"type": "uint256"
-				},
 				{
 					"name": "name",
 					"type": "string"

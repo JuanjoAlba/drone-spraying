@@ -27,10 +27,7 @@ contract Plot is IPlot {
     // Mapping plots by owner
     mapping (address => uint256[]) internal plotsByOwner;
     
-    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable returns (uint256) {
-        
-        // Check that address is an owner
-        // require( addres != null && role == 1, "Address does not belongs to an owner");
+    function addPlot (address _addres, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable returns (uint256) {
         
         // Add plot to owner
         plotList[plotCounter].plotId = plotCounter;
@@ -40,10 +37,10 @@ contract Plot is IPlot {
         plotList[plotCounter].pesticide = _pesticide;
         
         // add plot to owner
-        plotToOwner[plotCounter] = msg.sender;
+        plotToOwner[plotCounter] = _addres;
         
         // Add new plot to owner plot List
-        plotsByOwner[msg.sender].push(plotCounter);
+        plotsByOwner[_addres].push(plotCounter);
         
         // Increment plot´s Id
         plotCounter += 1;
@@ -52,7 +49,6 @@ contract Plot is IPlot {
     }
     
     function getPlot(uint256 _plotId) external constant returns (
-            uint256 plotId,
             string name,
             uint256 minAltitude,
             uint256 maxAltitude,
@@ -60,7 +56,6 @@ contract Plot is IPlot {
         {
         
         return (
-            plotList[_plotId].plotId,
             plotList[_plotId].name,
             plotList[_plotId].minAltitude,
             plotList[_plotId].maxAltitude,

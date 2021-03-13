@@ -9,8 +9,8 @@ import "./Interfaces/IUser.sol";
  */
 contract User is IUser {
     
-    uint constant ROLE_COMPANY = 0;
-    uint constant ROLE_OWNER = 1;
+    uint constant ROLE_COMPANY = 1;
+    uint constant ROLE_OWNER = 2;
     
     // Name
      struct userStruct {

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-import "./IERC20.sol";
+import "./Interfaces/IERC20.sol";
 
 /**
  * @title Standard ERC20 token
@@ -15,7 +15,7 @@ contract ERC20Token is IERC20 {
 
     mapping (address => mapping (address => uint256)) private _allowed;
 
-    uint256 private _totalSupply;
+    uint256 private _totalSupply = 1000;
   
     constructor(address _owner, uint256 _amount) public {
         

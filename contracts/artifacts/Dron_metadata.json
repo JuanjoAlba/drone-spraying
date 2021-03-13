@@ -6,69 +6,12 @@
 	"output": {
 		"abi": [
 			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "_minAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_maxAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_pesticide",
-						"type": "uint256"
-					}
-				],
-				"name": "searchDronBy",
-				"outputs": [
-					{
-						"name": "dronId",
-						"type": "uint256"
-					},
-					{
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"name": "minAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "maxAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "pesticideList",
-						"type": "uint256[]"
-					},
-					{
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getDronsByOwner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
+					{
+						"name": "_addres",
+						"type": "address"
+					},
 					{
 						"name": "_name",
 						"type": "string"
@@ -112,10 +55,6 @@
 				"name": "getDron",
 				"outputs": [
 					{
-						"name": "dronId",
-						"type": "uint256"
-					},
-					{
 						"name": "name",
 						"type": "string"
 					},
@@ -158,6 +97,41 @@
 				"payable": false,
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"name": "_minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_maxAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_pesticide",
+						"type": "uint256"
+					}
+				],
+				"name": "searchDronBy",
+				"outputs": [
+					{
+						"name": "dronId",
+						"type": "uint256"
+					},
+					{
+						"name": "cost",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -181,15 +155,15 @@
 	},
 	"sources": {
 		"localhost/Dron.sol": {
-			"keccak256": "0xe4b8bca5631e90edd78fff9516855edfb745de989955586cbce6ecc6b6e7eb57",
+			"keccak256": "0x4bb3d3f968d7739c1983be42817558275afde8704ac4cf61a0671b6de3f400e1",
 			"urls": [
-				"bzzr://7e2106ca49f68d0294d8dfe05462a614e1c4035b023a7005d7d42c205522f34f"
+				"bzzr://7ac2324f1c526671ab1fb0ba4c4a4cf3824f3abd3fca24a6a78acd14ab1a7f70"
 			]
 		},
 		"localhost/Interfaces/IDron.sol": {
-			"keccak256": "0xc779e68a4bc47193bdf19ae8f5468da14ceb9ee3d640d9cb37b5a204cff7bf95",
+			"keccak256": "0x8f258679876f7d002a74600693c954a7075a3472752e1a6982fc151be12337a2",
 			"urls": [
-				"bzzr://56ce9d373708461eaf1e87487cd51d3ff7cad8b0ce315fbaabc855cea00c0458"
+				"bzzr://74cfa068aa9f5b9ce49b6fab69a97881b089221466ccdf5d0c935c2b44c1eef9"
 			]
 		}
 	},

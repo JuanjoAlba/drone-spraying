@@ -48,27 +48,9 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "_plotId",
-						"type": "uint256"
-					},
-					{
-						"name": "_appAddress",
+						"name": "_address",
 						"type": "address"
 					},
-					{
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "toHireDron",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
 					{
 						"name": "_plotToSpray",
 						"type": "uint256"
@@ -78,6 +60,24 @@
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"name": "_plotId",
+						"type": "uint256"
+					}
+				],
+				"name": "toHireDron",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -164,18 +164,8 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
-						"name": "from",
-						"type": "address"
-					},
-					{
 						"indexed": false,
 						"name": "plotId",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -226,9 +216,9 @@
 	},
 	"sources": {
 		"localhost/Interfaces/IDron.sol": {
-			"keccak256": "0xc779e68a4bc47193bdf19ae8f5468da14ceb9ee3d640d9cb37b5a204cff7bf95",
+			"keccak256": "0x8f258679876f7d002a74600693c954a7075a3472752e1a6982fc151be12337a2",
 			"urls": [
-				"bzzr://56ce9d373708461eaf1e87487cd51d3ff7cad8b0ce315fbaabc855cea00c0458"
+				"bzzr://74cfa068aa9f5b9ce49b6fab69a97881b089221466ccdf5d0c935c2b44c1eef9"
 			]
 		},
 		"localhost/Interfaces/IERC20.sol": {
@@ -238,9 +228,9 @@
 			]
 		},
 		"localhost/Interfaces/IPlot.sol": {
-			"keccak256": "0x4bf2060bbbc31f59f675044e4cb47cfa4ffcb6de1ac09045744b1fc6d69c7d15",
+			"keccak256": "0x10dcf28162f1176f34dc27b6711fbce74a2adc88c85ca4ef8fc830770c754a51",
 			"urls": [
-				"bzzr://a91d54b5fac0802ce9e813792fca8c0cd8bcd169f27548c982f33ef4a2e68efb"
+				"bzzr://07848d085398826bdfc612bd4f24e0a9fbe627b235a691fa0bc6a48d0fa1d708"
 			]
 		},
 		"localhost/Interfaces/IUser.sol": {
@@ -250,9 +240,9 @@
 			]
 		},
 		"localhost/SprayingDroneApp.sol": {
-			"keccak256": "0x28fe3868672208f1db7cc392277878449d86aca34c704233ee616a48220a16b4",
+			"keccak256": "0xcedd0b844dff6ea600c50987f291377530c3f1c163aedd9b3d01581328ef9287",
 			"urls": [
-				"bzzr://d8d84d173c8402cfde76824b397206b8ace003d9ce1baa7f87d59eac74540153"
+				"bzzr://a8860575e7a387de8630d49e4e4126a3ad70f44357e8572c63873372650d6855"
 			]
 		}
 	},

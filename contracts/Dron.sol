@@ -27,13 +27,11 @@ contract Dron is IDron{
     mapping (uint256 => address) internal dronToCompany;
     // Mapping drons by owner
     mapping (address => uint256[]) internal dronsByCompany;
-    // Mapping from dron Id to approved address
-    mapping (uint256 => address) private dronApprovals;
     
-    function addDron (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) external payable returns (uint256) {
+    function addDron (address _addres, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) external payable returns (uint256) {
         
         // Add new dron to owner dron List
-        dronToCompany[dronCounter] = msg.sender;
+        dronToCompany[dronCounter] = _addres;
         
         // Add dron to owner
         dronList[dronCounter].dronId = dronCounter;
@@ -44,7 +42,7 @@ contract Dron is IDron{
         dronList[dronCounter].cost = _cost;
         
         // Add drons id to company's dron List
-        dronsByCompany[msg.sender].push(dronCounter);
+        dronsByCompany[_addres].push(dronCounter);
         
         // Increment dron´s Id
         dronCounter += 1;
@@ -61,7 +59,6 @@ contract Dron is IDron{
     }
 
     function getDron(uint256 _dronId) public constant returns (
-            uint256 dronId,
             string name,
             uint256 minAltitude,
             uint256 maxAltitude,
@@ -70,7 +67,6 @@ contract Dron is IDron{
         {
         
         return (
-            dronList[_dronId].dronId,
             dronList[_dronId].name,
             dronList[_dronId].minAltitude,
             dronList[_dronId].maxAltitude,
@@ -79,22 +75,19 @@ contract Dron is IDron{
         );
     }
     
-    function getDronsByOwner() external view returns (uint256[]) {
+    function getDronsByOwner(address _address) private view returns (uint256[]) {
         
-        return dronsByCompany[msg.sender];
+        return dronsByCompany[_address];
     }
     
-    function searchDronBy(uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) public constant returns (
+    function searchDronBy(address _address, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) public constant returns (
             uint256 dronId,
-            string name,
-            uint256 minAltitude,
-            uint256 maxAltitude,
-            uint256[] pesticideList,
             uint256 cost)
         {
         
         bool _find = false;
-        for(uint8 i=0; i<= dronCounter && !_find; i++){
+        uint256[] memory _drons = getDronsByOwner(_address);
+        for(uint8 i=0; i<= _drons.length && !_find; i++){
             
             if (checkHigh(i, _minAltitude, _maxAltitude) && checkPesticide(i, _pesticide)) {
                 dronId = i;
@@ -105,10 +98,6 @@ contract Dron is IDron{
         
         return (
             dronList[dronId].dronId,
-            dronList[dronId].name,
-            dronList[dronId].minAltitude,
-            dronList[dronId].maxAltitude,
-            dronList[dronId].pesticideList,
             dronList[dronId].cost
         );
     }

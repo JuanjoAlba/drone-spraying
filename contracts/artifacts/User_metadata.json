@@ -72,15 +72,15 @@
 	},
 	"sources": {
 		"localhost/Interfaces/IUser.sol": {
-			"keccak256": "0x751c5567d1abbbcae68b7f1df1ea8cb406ff24bbc2020980dbf8e4ec9482f70e",
+			"keccak256": "0xe3dd792c934df5604e0d29d2e24523c8006f26ae0abaa516f34d6b8c6aa6caa5",
 			"urls": [
-				"bzzr://4a68435f05712bd42332b1d4560c8c318e2c50f73b5ec15785f9569f92c8fe03"
+				"bzzr://34498c8fe12b45a79ed62860157cc042ee43b953a28b5b089864dd7f634700a3"
 			]
 		},
 		"localhost/User.sol": {
-			"keccak256": "0x0c30593a46ec4876efa9fec2a693cd9c36fe22f62a249751ebb05bbedebf2185",
+			"keccak256": "0xc300cc47e4c423f4f00d95482467a7608b3d2de887cd2ccaec54eab89948dab5",
 			"urls": [
-				"bzzr://2f02d6f73cdd2c3014c42f08f364714c97782a1dce931873972509c7e61d150c"
+				"bzzr://1ce3a089781162ee1a28e07d22757467a95a1f3c1307854c9aba5d61061b48bb"
 			]
 		}
 	},
