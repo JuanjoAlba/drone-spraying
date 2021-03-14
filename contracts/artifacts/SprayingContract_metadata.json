@@ -9,47 +9,11 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "_spender",
-						"type": "address"
-					},
-					{
 						"name": "_amount",
 						"type": "uint256"
 					}
 				],
-				"name": "approveToken",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getUserData",
-				"outputs": [
-					{
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"name": "role",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "getCash",
+				"name": "giveTokens",
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -59,12 +23,17 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "_plotId",
+						"name": "_plotToSpray",
 						"type": "uint256"
 					}
 				],
 				"name": "sprayPlot",
-				"outputs": [],
+				"outputs": [
+					{
+						"name": "_droneId",
+						"type": "uint256"
+					}
+				],
 				"payable": true,
 				"stateMutability": "payable",
 				"type": "function"
@@ -77,64 +46,13 @@
 						"type": "uint256"
 					}
 				],
-				"name": "toHireDrone",
-				"outputs": [],
-				"payable": true,
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
+				"name": "registerPlot",
+				"outputs": [
 					{
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"name": "_minAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_maxAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_pesticideList",
-						"type": "uint256[]"
-					},
-					{
-						"name": "_cost",
-						"type": "uint256"
+						"name": "",
+						"type": "bool"
 					}
 				],
-				"name": "addDrone",
-				"outputs": [],
-				"payable": true,
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"name": "_minAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_maxAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_pesticide",
-						"type": "uint256"
-					}
-				],
-				"name": "addPlot",
-				"outputs": [],
 				"payable": true,
 				"stateMutability": "payable",
 				"type": "function"
@@ -156,23 +74,11 @@
 			{
 				"inputs": [
 					{
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"name": "_role",
-						"type": "uint256"
-					},
-					{
-						"name": "_sprayingContract",
+						"name": "_plotC",
 						"type": "address"
 					},
 					{
 						"name": "_droneC",
-						"type": "address"
-					},
-					{
-						"name": "_plotC",
 						"type": "address"
 					},
 					{
@@ -189,23 +95,11 @@
 				"inputs": [
 					{
 						"indexed": false,
-						"name": "plotId",
-						"type": "uint256"
+						"name": "",
+						"type": "string"
 					}
 				],
-				"name": "jobRequested",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "plotId",
-						"type": "uint256"
-					}
-				],
-				"name": "jobDone",
+				"name": "log",
 				"type": "event"
 			}
 		],
@@ -218,7 +112,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/User.sol": "User"
+			"localhost/SprayingContract.sol": "SprayingContract"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -253,10 +147,10 @@
 				"bzzr://7dcc21a82d390ddf23ceb15dff80c13fbbb24fc2132e51ecc188f4a6536a2bc4"
 			]
 		},
-		"localhost/User.sol": {
-			"keccak256": "0xcf213c3ca12abb156dcdaeea1cfad756c258695e3fac2497adb7cb219741d932",
+		"localhost/SprayingContract.sol": {
+			"keccak256": "0xcc76afa77b62dc55ad8cc1b31203ac1241362e930785f904e2ea15b6e2c8e819",
 			"urls": [
-				"bzzr://0a0b472ae55a6c67f47f4c3bb950dbe432a7532588f1a241fc7f35a8380e57d0"
+				"bzzr://837d3b9981de40f7087d8a9a1033e787aede73a587f4077594fb9940bb1d7b31"
 			]
 		}
 	},

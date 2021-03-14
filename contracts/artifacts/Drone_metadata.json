@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.25+commit.59dbf8f1"
+		"version": "0.4.26+commit.4563c3fc"
 	},
 	"language": "Solidity",
 	"output": {
@@ -8,6 +8,79 @@
 			{
 				"constant": true,
 				"inputs": [
+					{
+						"name": "_droneId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_droneId",
+						"type": "uint256"
+					},
+					{
+						"name": "_minAltitude",
+						"type": "uint256"
+					},
+					{
+						"name": "_maxAltitude",
+						"type": "uint256"
+					}
+				],
+				"name": "checkHigh",
+				"outputs": [
+					{
+						"name": "droneValid",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_droneId",
+						"type": "uint256"
+					},
+					{
+						"name": "_pesticide",
+						"type": "uint256"
+					}
+				],
+				"name": "checkPesticide",
+				"outputs": [
+					{
+						"name": "droneValid",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_address",
+						"type": "address"
+					},
 					{
 						"name": "_minAltitude",
 						"type": "uint256"
@@ -21,45 +94,15 @@
 						"type": "uint256"
 					}
 				],
-				"name": "searchDronBy",
+				"name": "searchDroneBy",
 				"outputs": [
 					{
-						"name": "dronId",
+						"name": "_droneId",
 						"type": "uint256"
 					},
 					{
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"name": "minAltitude",
+						"name": "_cost",
 						"type": "uint256"
-					},
-					{
-						"name": "maxAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "pesticideList",
-						"type": "uint256[]"
-					},
-					{
-						"name": "cost",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getDronsByOwner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256[]"
 					}
 				],
 				"payable": false,
@@ -90,26 +133,22 @@
 						"type": "uint256"
 					}
 				],
-				"name": "addDron",
+				"name": "addDrone",
 				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
+				"payable": true,
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"constant": true,
 				"inputs": [
 					{
-						"name": "_dronId",
+						"name": "_droneId",
 						"type": "uint256"
 					}
 				],
-				"name": "getDron",
+				"name": "getDrone",
 				"outputs": [
-					{
-						"name": "dronId",
-						"type": "uint256"
-					},
 					{
 						"name": "name",
 						"type": "string"
@@ -139,15 +178,15 @@
 				"constant": true,
 				"inputs": [
 					{
-						"name": "_dronId",
-						"type": "uint256"
+						"name": "_address",
+						"type": "address"
 					}
 				],
-				"name": "ownerOf",
+				"name": "getDronesByCompany",
 				"outputs": [
 					{
 						"name": "",
-						"type": "address"
+						"type": "uint256[]"
 					}
 				],
 				"payable": false,
@@ -164,7 +203,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Tokens/Dron.sol": "Dron"
+			"localhost/Drone.sol": "Drone"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -175,10 +214,16 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Tokens/Dron.sol": {
-			"keccak256": "0x1c4cdb3b881a1b113b885b21a9213163a5f50357cdc947eb0abff708da1f376b",
+		"localhost/Drone.sol": {
+			"keccak256": "0xb59d0ebf1e6dec9e967f2a88ea1149eb6f83f09c54d891a28c79cd4df0e42190",
 			"urls": [
-				"bzzr://721ba4ead77770239411ce78dd3f7a82591a7fbfa57689716eb0e6c68af85bd9"
+				"bzzr://2fd7b843451d4d6e96602da189efa5ff40117453291c7c9b65a34fed2e77de9a"
+			]
+		},
+		"localhost/Interfaces/IDrone.sol": {
+			"keccak256": "0x99bc6f6c023d2cbabefa3166e757da8ba3342dddb47109383da9ece3c01c28dd",
+			"urls": [
+				"bzzr://903990df6553b72a314d939400748ce938910a50bd5ad94729f5d3d044601f21"
 			]
 		}
 	},

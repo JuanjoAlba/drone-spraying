@@ -11,7 +11,6 @@ contract Plot is IPlot {
     
     // Plot structure
     struct PlotStruct {
-        uint256 plotId; // Plot Id 
         string name; // plot's name
         uint256 minAltitude; // minimun altitude
         uint256 maxAltitude; // maximun altitude
@@ -19,7 +18,7 @@ contract Plot is IPlot {
     }
 
     // Counter for plot Id's
-    uint256 internal plotCounter;
+    uint256 internal plotCounter = 1;
     // Mapping plotId to Plot
     mapping (uint256 => PlotStruct) internal plotList;
     // Mapping plot to owner
@@ -27,36 +26,31 @@ contract Plot is IPlot {
     // Mapping plots by owner
     mapping (address => uint256[]) internal plotsByOwner;
     
-    function addPlot (address _addres, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable returns (uint256) {
+    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable {
         
         // Add plot to owner
-        plotList[plotCounter].plotId = plotCounter;
         plotList[plotCounter].name = _name;
         plotList[plotCounter].minAltitude = _minAltitude;
         plotList[plotCounter].maxAltitude = _maxAltitude;
         plotList[plotCounter].pesticide = _pesticide;
         
         // add plot to owner
-        plotToOwner[plotCounter] = _addres;
+        plotToOwner[plotCounter] = msg.sender;
         
         // Add new plot to owner plot List
-        plotsByOwner[_addres].push(plotCounter);
+        plotsByOwner[msg.sender].push(plotCounter);
         
         // Increment plot´s Id
         plotCounter += 1;
-        
-        return plotList[plotCounter].plotId;
     }
     
     function getPlot(uint256 _plotId) external constant returns (
-            string name,
             uint256 minAltitude,
             uint256 maxAltitude,
             uint256 pesticide)
         {
         
         return (
-            plotList[_plotId].name,
             plotList[_plotId].minAltitude,
             plotList[_plotId].maxAltitude,
             plotList[_plotId].pesticide

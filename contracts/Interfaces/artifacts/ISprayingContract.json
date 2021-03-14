@@ -44,106 +44,78 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"approve(address,uint256)": "095ea7b3",
-			"getApproved(uint256)": "081812fc",
-			"ownerOf(uint256)": "6352211e"
+			"getjobsToDo()": "dc2e3df4",
+			"giveTokens(uint256)": "54311422",
+			"registerPlot(uint256)": "ad1cc5b9",
+			"sprayPlot(uint256)": "615e32f6"
 		}
 	},
 	"abi": [
 		{
-			"constant": true,
-			"inputs": [
-				{
-					"name": "tokenId",
-					"type": "uint256"
-				}
-			],
-			"name": "getApproved",
-			"outputs": [
-				{
-					"name": "operator",
-					"type": "address"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
 			"constant": false,
 			"inputs": [
 				{
-					"name": "to",
-					"type": "address"
-				},
-				{
-					"name": "tokenId",
+					"name": "_amount",
 					"type": "uint256"
 				}
 			],
-			"name": "approve",
+			"name": "giveTokens",
 			"outputs": [],
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
-			"constant": true,
+			"constant": false,
 			"inputs": [
 				{
-					"name": "tokenId",
+					"name": "_plotToSpray",
 					"type": "uint256"
 				}
 			],
-			"name": "ownerOf",
+			"name": "sprayPlot",
 			"outputs": [
 				{
-					"name": "owner",
-					"type": "address"
+					"name": "_droneId",
+					"type": "uint256"
+				}
+			],
+			"payable": true,
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "_plotId",
+					"type": "uint256"
+				}
+			],
+			"name": "registerPlot",
+			"outputs": [
+				{
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": true,
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getjobsToDo",
+			"outputs": [
+				{
+					"name": "jobsToDo",
+					"type": "uint256[5]"
 				}
 			],
 			"payable": false,
 			"stateMutability": "view",
 			"type": "function"
-		},
-		{
-			"anonymous": false,
-			"inputs": [
-				{
-					"indexed": true,
-					"name": "from",
-					"type": "address"
-				},
-				{
-					"indexed": true,
-					"name": "tokenId",
-					"type": "uint256"
-				}
-			],
-			"name": "Sprayed",
-			"type": "event"
-		},
-		{
-			"anonymous": false,
-			"inputs": [
-				{
-					"indexed": true,
-					"name": "owner",
-					"type": "address"
-				},
-				{
-					"indexed": true,
-					"name": "approved",
-					"type": "address"
-				},
-				{
-					"indexed": true,
-					"name": "tokenId",
-					"type": "uint256"
-				}
-			],
-			"name": "Approval",
-			"type": "event"
 		}
 	]
 }

@@ -8,10 +8,10 @@ pragma solidity ^0.4.25;
 interface IPlot {
     
     // Add plot to a map
-    function addPlot (address _addres, string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable returns (uint256);
+    function addPlot (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256 _pesticide) external payable;
     
     // Get values of a plot by id
-    function getPlot(uint256 _plotId) external view returns (string name, uint256 minAltitude, uint256 maxAltitude, uint256 pesticide);
+    function getPlot(uint256 _plotId) external view returns (uint256 minAltitude, uint256 maxAltitude, uint256 pesticide);
     
     // Get a list of plots by owner
     function getPlotsByOwner() external view returns (uint256[]);

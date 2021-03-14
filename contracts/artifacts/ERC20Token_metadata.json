@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.25+commit.59dbf8f1"
+		"version": "0.4.26+commit.4563c3fc"
 	},
 	"language": "Solidity",
 	"output": {
@@ -73,21 +73,16 @@
 				"constant": false,
 				"inputs": [
 					{
-						"name": "spender",
+						"name": "account",
 						"type": "address"
 					},
 					{
-						"name": "addedValue",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "increaseAllowance",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "_mint",
+				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -109,29 +104,6 @@
 				],
 				"payable": false,
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"name": "subtractedValue",
-						"type": "uint256"
-					}
-				],
-				"name": "decreaseAllowance",
-				"outputs": [
-					{
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -181,16 +153,7 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"name": "_owner",
-						"type": "address"
-					},
-					{
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "constructor"
@@ -242,6 +205,13 @@
 		],
 		"devdoc": {
 			"methods": {
+				"_mint(address,uint256)": {
+					"details": "Internal function that mints an amount of the token and assigns it to\r an account. This encapsulates the modification of balances such that the\r proper events are emitted.\r",
+					"params": {
+						"account": "The account that will receive the created tokens.\r",
+						"amount": "The amount that will be created.\r"
+					}
+				},
 				"allowance(address,address)": {
 					"details": "Function to check the amount of tokens that an owner allowed to a spender.\r",
 					"params": {
@@ -263,20 +233,6 @@
 						"owner": "The address to query the balance of.\r"
 					},
 					"return": "An uint256 representing the amount owned by the passed address.\r"
-				},
-				"decreaseAllowance(address,uint256)": {
-					"details": "Decrease the amount of tokens that an owner allowed to a spender.\r approve should be called when allowed_[_spender] == 0. To decrement\r allowed value is better to use this function to avoid 2 calls (and wait until\r the first transaction is mined)\r From MonolithDAO Token.sol\r",
-					"params": {
-						"spender": "The address which will spend the funds.\r",
-						"subtractedValue": "The amount of tokens to decrease the allowance by.\r"
-					}
-				},
-				"increaseAllowance(address,uint256)": {
-					"details": "Increase the amount of tokens that an owner allowed to a spender.\r approve should be called when allowed_[_spender] == 0. To increment\r allowed value is better to use this function to avoid 2 calls (and wait until\r the first transaction is mined)\r From MonolithDAO Token.sol\r",
-					"params": {
-						"addedValue": "The amount of tokens to increase the allowance by.\r",
-						"spender": "The address which will spend the funds.\r"
-					}
 				},
 				"totalSupply()": {
 					"details": "Total number of tokens in existence\r"
@@ -317,15 +273,15 @@
 	},
 	"sources": {
 		"localhost/ERC20Token.sol": {
-			"keccak256": "0x1434ea935e349646037d6cde83da23139bf79343349a3a7d722bc6f009029271",
+			"keccak256": "0x4d5c34792238a0c70b2c388ffa3fa396402744caaff0aed2b7524493c29e137a",
 			"urls": [
-				"bzzr://b626cf2b63c7eff7a3be9cbda25e7c15a872242720ba5494d471c733a0cdd186"
+				"bzzr://00a49fae14279e08d727bca8143b99281076fe5de517929541937c59b528e62f"
 			]
 		},
 		"localhost/Interfaces/IERC20.sol": {
-			"keccak256": "0xa9ddddb4a526800dcfb8e639ded5b7aa311f2df5aa3fb8d09324fed30a7cb664",
+			"keccak256": "0x4e74bcbfe114515d5e188a0de866006b7fef2631d0a48d0571a9d9ae432c5241",
 			"urls": [
-				"bzzr://2764b7293fcada74d8c153df4c5cf7d51d6d86c26553a5059cbf92322bd91402"
+				"bzzr://d237c067d5a945151ad4060558932ddc17acfe4a8238d376dbcda88dcbf00b0b"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.25+commit.59dbf8f1"
+		"version": "0.4.26+commit.4563c3fc"
 	},
 	"language": "Solidity",
 	"output": {
@@ -25,12 +25,22 @@
 				"type": "function"
 			},
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "getPlotsByOwner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
-					{
-						"name": "_addres",
-						"type": "address"
-					},
 					{
 						"name": "_name",
 						"type": "string"
@@ -49,28 +59,9 @@
 					}
 				],
 				"name": "addPlot",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256"
-					}
-				],
+				"outputs": [],
 				"payable": true,
 				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getPlotsByOwner",
-				"outputs": [
-					{
-						"name": "",
-						"type": "uint256[]"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -83,10 +74,6 @@
 				],
 				"name": "getPlot",
 				"outputs": [
-					{
-						"name": "name",
-						"type": "string"
-					},
 					{
 						"name": "minAltitude",
 						"type": "uint256"
@@ -126,15 +113,15 @@
 	},
 	"sources": {
 		"localhost/Interfaces/IPlot.sol": {
-			"keccak256": "0x10dcf28162f1176f34dc27b6711fbce74a2adc88c85ca4ef8fc830770c754a51",
+			"keccak256": "0x2310b3639caf6d903bbfc33df03e8a59ea91ddd59558e37970422d6313750e54",
 			"urls": [
-				"bzzr://07848d085398826bdfc612bd4f24e0a9fbe627b235a691fa0bc6a48d0fa1d708"
+				"bzzr://44b87137b258a09992ff70bc9de7585eccda0d025c5acddc5c635bb5d9380678"
 			]
 		},
 		"localhost/Plot.sol": {
-			"keccak256": "0x050838355638c17057d440ebb3b4101cf8985e380c9a68144018cae03636a5a6",
+			"keccak256": "0x13a6ef338f8800419b3d9b2f39575e7aca10ec14bfeb20b0dfa25686128f0b2d",
 			"urls": [
-				"bzzr://481fd8e2ae09cc34280cc6a6b881eb8a19d0026837cd149e40b5231e8ae8bc4b"
+				"bzzr://03b768930ef299b4e232a8a8bdea6814c4848fb0a8f8df4aa6d20ca106765074"
 			]
 		}
 	},

@@ -44,7 +44,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"addPlot(address,string,uint256,uint256,uint256)": "989d9683",
+			"addPlot(string,uint256,uint256,uint256)": "c9865753",
 			"getPlot(uint256)": "cfdd4fbd",
 			"getPlotsByOwner()": "bcafec5c",
 			"ownerOf(uint256)": "6352211e"
@@ -71,12 +71,22 @@
 			"type": "function"
 		},
 		{
+			"constant": true,
+			"inputs": [],
+			"name": "getPlotsByOwner",
+			"outputs": [
+				{
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
 			"constant": false,
 			"inputs": [
-				{
-					"name": "_addres",
-					"type": "address"
-				},
 				{
 					"name": "_name",
 					"type": "string"
@@ -95,28 +105,9 @@
 				}
 			],
 			"name": "addPlot",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
+			"outputs": [],
 			"payable": true,
 			"stateMutability": "payable",
-			"type": "function"
-		},
-		{
-			"constant": true,
-			"inputs": [],
-			"name": "getPlotsByOwner",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256[]"
-				}
-			],
-			"payable": false,
-			"stateMutability": "view",
 			"type": "function"
 		},
 		{
@@ -129,10 +120,6 @@
 			],
 			"name": "getPlot",
 			"outputs": [
-				{
-					"name": "name",
-					"type": "string"
-				},
 				{
 					"name": "minAltitude",
 					"type": "uint256"

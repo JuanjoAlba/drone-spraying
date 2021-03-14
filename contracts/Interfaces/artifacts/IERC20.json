@@ -44,6 +44,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
+			"_mint(address,uint256)": "4e6ec247",
 			"allowance(address,address)": "dd62ed3e",
 			"approve(address,uint256)": "095ea7b3",
 			"balanceOf(address)": "70a08231",
@@ -61,7 +62,7 @@
 					"type": "address"
 				},
 				{
-					"name": "amount",
+					"name": "value",
 					"type": "uint256"
 				}
 			],
@@ -113,6 +114,24 @@
 					"type": "bool"
 				}
 			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "_mint",
+			"outputs": [],
 			"payable": false,
 			"stateMutability": "nonpayable",
 			"type": "function"
