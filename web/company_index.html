@@ -2,6 +2,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.35/dist/web3.min.js"></script>
         <link rel="stylesheet" href="./resources/tfe.css">
         <script src="./resources/tfe.js"></script>
         <script>
@@ -50,19 +51,19 @@
                     </colgroup>
                     <tr>
                         <th w>Nombre: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id="name"></td>
                     </tr>
                     <tr>
                         <th>Atura m&#237;nima: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id="minAltitude"></td>
                     </tr>
                     <tr>
                         <th>Altura m&#225;xima: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id="maxAltitude"></td>
                     </tr>
                     <tr>
                         <th>Coste: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id="cost"></td>
                     </tr>
                     <tr>
                         <th>Pesticidas: </th>
@@ -75,7 +76,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick=""></td>
+                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick="addDron()"></td>
                     </tr>
                 </table>
             </div>
@@ -88,7 +89,7 @@
                     </colgroup>
                     <tr>
                         <th>Consulta Saldo: </th>
-                        <td><input type="button" name="buttonSaldoC" value="Saldo" onclick=""></td>
+                        <td><input type="button" name="buttonSaldoC" value="Saldo" onclick="getTokens('C')"></td>
                         <td colspan="8" align="left"><div id="saldo"></div></td>
                     </tr>
                 </table>
@@ -110,7 +111,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="asignarTrabajoButton" value="Asignar Trabajo" onclick=""></td>
+                        <td colspan="2" align="center"><input type="button" name="asignarTrabajoButton" value="Asignar Trabajo" onclick="sprayPlot()"></td>
                     </tr>
                 </table>
             </div>

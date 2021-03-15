@@ -1,12 +1,13 @@
 // User Contract ABI
-const ABI_USER = ;
+const ABI_USER = [{"constant":true,"inputs":[{"name":"_droneId","type":"uint256"}],"name":"ownerOf","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_address","type":"address"},{"name":"_minAltitude","type":"uint256"},{"name":"_maxAltitude","type":"uint256"},{"name":"_pesticide","type":"uint256"}],"name":"searchDroneBy","outputs":[{"name":"droneId","type":"uint256"},{"name":"cost","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"string"},{"name":"_minAltitude","type":"uint256"},{"name":"_maxAltitude","type":"uint256"},{"name":"_pesticideList","type":"uint256[]"},{"name":"_cost","type":"uint256"}],"name":"addDrone","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"_droneId","type":"uint256"}],"name":"getDrone","outputs":[{"name":"name","type":"string"},{"name":"minAltitude","type":"uint256"},{"name":"maxAltitude","type":"uint256"},{"name":"pesticideList","type":"uint256[]"},{"name":"cost","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
 // Token Contract ABI
-const ABI_TOK = ;
+const ABI_TOK = [{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"account","type":"address"},{"name":"amount","type":"uint256"}],"name":"_mint","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"}];
 
 //Contratos
-var company_contract = "";
-var owner_contract = "";
-var token_contract = "";
+var company_contract = "0x14ca1aBdb4Ce8824283c5D8CFfC52a3a1a40cae4";
+var owner_contract = "0x1B12d58126ff1fA2A42520754A04f3A0eA438Fc7";
+var token_contract = "0x88768D25079646B4634f87f724436A42d694942C";
+var spray_contract = "0x7b53394eFAD679c8C96b644d43b165211ff5B716";
 
 // web3 object
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
@@ -67,9 +68,20 @@ function getTokensToOwner(address, name, role) {
  *
  * Receives user account and role (0 - company, 1 - owner)
  */
-function addDron(name, role) {
+function addDron() {
 
-    companyInstance.methods.addDron(name, minAltitude, maxAltitude, pesticide).send({from: companyAccount, gas: 1000000}, function(error, result){
+    var name = document.getElementById('name').value;
+    var minAltitude = document.getElementById('minAltitude').value;
+    var maxAltitude = document.getElementById('maxAltitude').value;
+    var cost = document.getElementById('cost').value;
+    var pesticides = []
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        pesticides.push(checkboxes[i].value);
+    }
+
+    companyInstance.methods.addDron(name, minAltitude, maxAltitude, pesticides, cost).send({from: companyAccount, gas: 1000000}, function(error, result){
         if(!error){
             document.getElementById('companyConsole').innerHTML = document.getElementById('console').innerHTML+"<br>"+result;
             console.log(result);
@@ -112,7 +124,7 @@ function registerPlotToSpray(idPlot, tokensAmount) {
     }).on('receipt', function(receipt) {
         executionNonce = receipt.events.ExecutionRequested.returnValues.executionId;
         // Aprbamos el pago
-        tokenInstance.methods.approve(<aprayContract_address/>, tokensAmount).send({from: ownerAccount, gas: 1000000}, function(error, result){
+        tokenInstance.methods.approve(spray_contract, tokensAmount).send({from: ownerAccount, gas: 1000000}, function(error, result){
             if(!error){
                 document.getElementById('ownerConsole').innerHTML = document.getElementById('console').innerHTML+"<br>"+result;
                 console.log(result);
@@ -130,9 +142,9 @@ function registerPlotToSpray(idPlot, tokensAmount) {
  *
  * Receives user account and role (0 - company, 1 - owner)
  */
-function getPlotsToSpray(address) {
+function getPlotsToSpray() {
 
-    ownerInstance.methods.getjobsToDo(address).call(function(error, result){
+    ownerInstance.methods.getjobsToDo().call(function(error, result){
         if(!error){
             document.getElementById('companyConsole').innerHTML = document.getElementById('console').innerHTML+"<br>"+result;
             console.log(result);
@@ -144,7 +156,9 @@ function getPlotsToSpray(address) {
     });
 }
 
-function sprayPlot(idPlot) {
+function sprayPlot() {
+
+    var idPlot = '1';
 
     companyInstance.methods.addPlot(idPlot).send({from: companyAccount, gas: 1000000}, function(error, result){
         if(!error){
@@ -182,7 +196,14 @@ function addUser(address, name, role) {
  *
  * Receives user account and role (0 - company, 1 - owner)
  */
-function getTokens(address) {
+function getTokens(userType) {
+
+    var address;
+    if (userType == 'C') {
+        address = company_contract;
+    } else {
+        address = owner_contract;
+    }
 
     tokenInstance.methods.balanceOf(address).call(function(error, result){
         if(!error){
