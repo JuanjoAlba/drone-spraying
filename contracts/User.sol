@@ -68,11 +68,13 @@ contract User {
         plotContract.addPlot(_name, _minAltitude, _maxAltitude, _pesticide);
     }
     
-    function getjobsToDo () external view returns (uint256[5] memory jobsToDo) {
+    function getjobsToDo () external view returns (uint256[5] memory _jobsToDo) {
         
         require( userRole == 1, "Address does not belongs to a company");
         
-        return sprayingContract.getjobsToDo();
+        _jobsToDo = sprayingContract.getjobsToDo();
+        
+        return _jobsToDo;
     }
     
     function toHireDrone (uint256 _plotId) external payable {
@@ -100,9 +102,23 @@ contract User {
         sprayingContract.giveTokens(_amount);
     }
     
-    function approveToken (address _spender, uint256 _amount) external {
+    function getTokenBalance () external view returns (uint256 _balance) {
+        
+        _balance = tokenContract.balanceOf(address(this));
      
-        tokenContract.approve(_spender, _amount);
+        return _balance;
+    }
+    
+    function approveToken (uint256 _amount) external {
+     
+        tokenContract.approve(sprayingContract, _amount);
+    }
+    
+    function getjobsDone () external view returns (uint256[] jobsDone) {
+        
+        require( userRole == 2, "Address does not belongs to an owner");
+        
+        return sprayingContract.getjobsDone();        
     }
     
 }

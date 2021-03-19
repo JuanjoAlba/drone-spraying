@@ -215,9 +215,9 @@
 	},
 	"sources": {
 		"localhost/Drone.sol": {
-			"keccak256": "0xb59d0ebf1e6dec9e967f2a88ea1149eb6f83f09c54d891a28c79cd4df0e42190",
+			"keccak256": "0x114ba56698d9cb956add8fba8841e65a1b33a888ccb0328a7177310700222237",
 			"urls": [
-				"bzzr://2fd7b843451d4d6e96602da189efa5ff40117453291c7c9b65a34fed2e77de9a"
+				"bzzr://53abf73e259a21cd933f2aaf507cc683a4f7e0d55f66377847bdaf286a36a273"
 			]
 		},
 		"localhost/Interfaces/IDrone.sol": {

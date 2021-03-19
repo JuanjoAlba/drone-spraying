@@ -7,6 +7,8 @@
         <script src="./resources/tfe.js"></script>
         <script>
 
+            start();
+
             // Función para manejar las pestañas
             function clickHandle(evt, idMenu) {
               let i, menucontent, tablinks;
@@ -26,6 +28,7 @@
               // Display the clicked tab and set it to active.
               document.getElementById(idMenu).style.display = "block";
               evt.currentTarget.className += " active";
+              
             }
 
 
@@ -40,7 +43,7 @@
             <button class="tablinks" onclick="clickHandle(event, 'consultaSaldo')">CONSULTA SALDO</button>
             <button class="tablinks" onclick="clickHandle(event, 'asignarTrabajo')">SOLICITAR TRABAJO</button>
         </div>
-        <div class="main">
+        <div class="mainMenu">
             <!-- Alta de parcelas -->
             <div id="altaParcela" class="menucontent">
                 <table style="width:100%">
@@ -50,20 +53,20 @@
                     </colgroup>
                     <tr>
                         <th w>Nombre: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="" id="plotName"></td>
                     </tr>
                     <tr>
-                        <th>Atura m&#237;nima: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <th>Atura m&iacute;nima: </th>
+                        <td><input type="text" name="" id="plotMinAltitude"></td>
                     </tr>
                     <tr>
-                        <th>Altura m&#225;xima: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <th>Altura m&aacute;xima: </th>
+                        <td><input type="text" name="" id="plotMaxAltitude"></td>
                     </tr>
                     <tr>
                         <th>Pesticida: </th>
                         <td colspan="7">
-                            <select name="pesticida" id="pesticida">
+                            <select name="pesticida" id="plotPesticide">
                                 <option value="1">Pesticida A</option>
                                 <option value="2">Pesticida B</option>
                                 <option value="3">Pesticida C</option>
@@ -73,7 +76,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA PARCELA" onclick=""></td>
+                        <td colspan="2" align="center"><input type="button" name="addPlot" value="ALTA PARCELA" onclick="addPlot()"></td>
                     </tr>
                 </table>
             </div>
@@ -86,7 +89,7 @@
                     </colgroup>
                     <tr>
                         <th>Consulta Saldo: </th>
-                        <td><input type="button" name="buttonSaldoC" value="Saldo" onclick=""></td>
+                        <td><input type="button" name="buttonSaldoC" value="Saldo" onclick="getTokens('O')"></td>
                         <td align="left"><div id="saldo"></div></td>
                     </tr>
                 </table>
@@ -95,20 +98,30 @@
             <div id="asignarTrabajo" class="menucontent">
                 <table style="width:100%">
                     <colgroup>
-                        <col span="1" style="width: 50%;">
-                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 25%;">
+                        <col span="1" style="width: 25%;">
+                        <col span="1" style="width: 25%;">
+                        <col span="1" style="width: 25%;">
                     </colgroup>
                     <tr>
                         <th>Introduzca el Identificador de la Parcela: </th>
-                        <td><input type="text" name="" id=""></td>
+                        <td><input type="text" name="idPlot" id="idPlot"></td>
+                        <th>Introduzca cantidad de dep&oacute;sito: </th>
+                        <td><input type="text" name="amount" id="amount"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="solicitarTrabajoButton" value="Solicitar Trabajo" onclick=""></td>
+                        <td colspan="2" align="center"><input type="button" name="requestJobButton" value="Solicitar Trabajo" onclick="registerPlotToSpray()"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">Revisar trabajos realizados</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="button" name="jobsDoneButton" value="Trabajos Terminados" onclick="getjobsDone()"></td>
                     </tr>
                 </table>
             </div>
             <!-- Zona de muestra de resultados -->
-            <div id="ownerConsole"></div>
+            <div id="ownerConsole" class="console"></div>
         </div>
     </body>
 </html>

@@ -44,6 +44,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
+			"getjobsDone()": "4e0602cf",
 			"getjobsToDo()": "dc2e3df4",
 			"giveTokens(uint256)": "54311422",
 			"registerPlot(uint256)": "ad1cc5b9",
@@ -51,6 +52,20 @@
 		}
 	},
 	"abi": [
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getjobsDone",
+			"outputs": [
+				{
+					"name": "jobsDone",
+					"type": "uint256[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
 		{
 			"constant": false,
 			"inputs": [

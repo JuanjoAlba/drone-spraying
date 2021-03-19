@@ -32,4 +32,11 @@ interface ISprayingContract {
      * This operation is called by the company
      */
     function getjobsToDo () external view returns (uint256[5] memory jobsToDo);
+    
+    /*
+     * Get sprayed plot ids
+     *
+     * This operation is called by the owner of plots
+     */
+    function getjobsDone () external view returns (uint256[] jobsDone);
 }

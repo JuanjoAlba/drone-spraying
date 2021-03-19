@@ -6,12 +6,26 @@
 	"output": {
 		"abi": [
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "getUserData",
+				"outputs": [
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "role",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
-					{
-						"name": "_spender",
-						"type": "address"
-					},
 					{
 						"name": "_amount",
 						"type": "uint256"
@@ -26,15 +40,11 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "getUserData",
+				"name": "getjobsDone",
 				"outputs": [
 					{
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"name": "role",
-						"type": "uint256"
+						"name": "jobsDone",
+						"type": "uint256[]"
 					}
 				],
 				"payable": false,
@@ -81,6 +91,20 @@
 				"outputs": [],
 				"payable": true,
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getTokenBalance",
+				"outputs": [
+					{
+						"name": "_balance",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -145,7 +169,7 @@
 				"name": "getjobsToDo",
 				"outputs": [
 					{
-						"name": "jobsToDo",
+						"name": "_jobsToDo",
 						"type": "uint256[5]"
 					}
 				],
@@ -248,15 +272,15 @@
 			]
 		},
 		"localhost/Interfaces/ISprayingContract.sol": {
-			"keccak256": "0x5fd6ee9dedd5515e6d8021582b459ef735fc310073751a9148110078ba6b7f96",
+			"keccak256": "0xdcdf287b14f4f7eacce301ca81f6353891c7a9e8581626e77537801eab461788",
 			"urls": [
-				"bzzr://7dcc21a82d390ddf23ceb15dff80c13fbbb24fc2132e51ecc188f4a6536a2bc4"
+				"bzzr://83a8b40b1fd705f9508c4c0fd815c6fee663df1823acc06eafe910a716d5e14d"
 			]
 		},
 		"localhost/User.sol": {
-			"keccak256": "0xcf213c3ca12abb156dcdaeea1cfad756c258695e3fac2497adb7cb219741d932",
+			"keccak256": "0xe4224d19052a0592065010d584ed697c24ed3dd87588a8ef75a4a53ca1554cd2",
 			"urls": [
-				"bzzr://0a0b472ae55a6c67f47f4c3bb950dbe432a7532588f1a241fc7f35a8380e57d0"
+				"bzzr://bd85e1ca5d6d63392242749f3554d7c4229a63236e575f11d84d0344931d0686"
 			]
 		}
 	},

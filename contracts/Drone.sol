@@ -7,7 +7,7 @@ import "./Interfaces/IDrone.sol";
  *
  * @author Juan José Alba
  */
-contract Drone is IDrone{
+contract Drone is IDrone {
         
     // Drone structure
     struct structDrone {

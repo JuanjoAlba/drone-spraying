@@ -17,10 +17,10 @@
 
             /////////////////////////////////////////////////////////////
 
-            // Función para manejar las pestañas
+            // Función para manejar las pestañas de la aplicación
             function clickHandle(evt, nombreTab) {
               let i, tabcontent, tablinks;
-            
+           
               // This is to clear the previous clicked content.
               tabcontent = document.getElementsByClassName("tabcontent");
               for (i = 0; i < tabcontent.length; i++) {
@@ -36,9 +36,6 @@
               // Display the clicked tab and set it to active.
               document.getElementById(nombreTab).style.display = "block";
               evt.currentTarget.className += " active";
-              if (nombreTab == 'compania') {
-                  // getPlotsToSpray();
-              }
             }
         </script>
     </head>
@@ -47,7 +44,7 @@
         <h3>Contratación de Drones</h3>
             <div class="tab">
                 <button class="tablinks" onclick="clickHandle(event, 'principal')">TFE</button>
-                <button class="tablinks" onclick="clickHandle(event, 'compania')">Compa&#241;&#237;a</button>
+                <button class="tablinks" onclick="clickHandle(event, 'compania')">Compa&ntilde;&iacute;a</button>
                 <button class="tablinks" onclick="clickHandle(event, 'propietario')">Propietario</button>
             </div>
             <form name="tfeForm">
@@ -67,8 +64,5 @@
                     <iframe src="./owner_index.html" height="300" width="1600" frameBorder="0"></iframe>
                 </div>
             </form>
-
-            <!-- Zona de muestra de resultados -->
-            <div id="indexConsole"></div>
      </body>
 </html>

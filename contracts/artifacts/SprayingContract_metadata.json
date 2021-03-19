@@ -6,6 +6,20 @@
 	"output": {
 		"abi": [
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "getjobsDone",
+				"outputs": [
+					{
+						"name": "jobsDone",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [
 					{
@@ -142,15 +156,15 @@
 			]
 		},
 		"localhost/Interfaces/ISprayingContract.sol": {
-			"keccak256": "0x5fd6ee9dedd5515e6d8021582b459ef735fc310073751a9148110078ba6b7f96",
+			"keccak256": "0xdcdf287b14f4f7eacce301ca81f6353891c7a9e8581626e77537801eab461788",
 			"urls": [
-				"bzzr://7dcc21a82d390ddf23ceb15dff80c13fbbb24fc2132e51ecc188f4a6536a2bc4"
+				"bzzr://83a8b40b1fd705f9508c4c0fd815c6fee663df1823acc06eafe910a716d5e14d"
 			]
 		},
 		"localhost/SprayingContract.sol": {
-			"keccak256": "0xcc76afa77b62dc55ad8cc1b31203ac1241362e930785f904e2ea15b6e2c8e819",
+			"keccak256": "0x2f0e4b6108814fde3376484fb80c994ea8c46d0e0054f67a6c5d32fe21e63aa7",
 			"urls": [
-				"bzzr://837d3b9981de40f7087d8a9a1033e787aede73a587f4077594fb9940bb1d7b31"
+				"bzzr://9b3315ef71acaed57508507b242df0365f1ac893c0c3a26b3f2d3e42cb7baeb8"
 			]
 		}
 	},

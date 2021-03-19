@@ -34,6 +34,8 @@ contract SprayingContract is ISprayingContract{
     mapping (uint256 => record) internal requestList;
     // plot Id to job requested
     mapping (uint256 => uint256) internal plotToRequest;
+    // Jobs done (owner => sprayed plots)
+    mapping (address => uint256[]) internal done;
 
     // Constructor
     constructor (address _plotC, address _droneC, address _tokenC) public {
@@ -98,6 +100,7 @@ contract SprayingContract is ISprayingContract{
         requestList[_requestID].droneId = _droneId;
         requestList[_requestID].sprayed = true;
         plotToRequest[_plotToSpray] = 0;
+        done[_plotOwner].push(_plotToSpray);
         
         emit log("Parcela fumigada");
         
@@ -113,9 +116,14 @@ contract SprayingContract is ISprayingContract{
         
         for(uint8 i=1; i<= numberOfJobsRequested; i++){
             
-            if (requestList[i].sprayed == false) jobsToDo[i] = requestList[i].plotId;
+            if (requestList[i].sprayed == false) jobsToDo[i-1] = requestList[i].plotId;
         }
 
         return jobsToDo;        
+    }
+    
+    function getjobsDone () external view returns (uint256[] jobsDone) {
+        
+        return done[msg.sender];        
     }
 }

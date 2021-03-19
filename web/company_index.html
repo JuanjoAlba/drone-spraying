@@ -7,6 +7,8 @@
         <script src="./resources/tfe.js"></script>
         <script>
 
+            start();
+
             // Función para manejar las pestañas
             function clickHandle(evt, idMenu) {
               let i, menucontent, tablinks;
@@ -26,6 +28,10 @@
               // Display the clicked tab and set it to active.
               document.getElementById(idMenu).style.display = "block";
               evt.currentTarget.className += " active";
+
+              if (idMenu == 'asignarTrabajo') {
+                  getPlotsToSpray();
+              }
             }
 
 
@@ -40,7 +46,7 @@
             <button class="tablinks" onclick="clickHandle(event, 'consultaSaldo')">CONSULTA SALDO</button>
             <button class="tablinks" onclick="clickHandle(event, 'asignarTrabajo')">TRABAJOS</button>
         </div>
-        <div class="main">
+        <div class="mainMenu">
             
             <!-- Alta de drones -->
             <div id="altaDron" class="menucontent">
@@ -51,19 +57,19 @@
                     </colgroup>
                     <tr>
                         <th w>Nombre: </th>
-                        <td><input type="text" name="" id="name"></td>
+                        <td><input type="text" name="" id="droneName"></td>
                     </tr>
                     <tr>
-                        <th>Atura m&#237;nima: </th>
-                        <td><input type="text" name="" id="minAltitude"></td>
+                        <th>Atura m&aacute;nima: </th>
+                        <td><input type="text" name="" id="droneMinAltitude"></td>
                     </tr>
                     <tr>
-                        <th>Altura m&#225;xima: </th>
-                        <td><input type="text" name="" id="maxAltitude"></td>
+                        <th>Altura m&iacute;xima: </th>
+                        <td><input type="text" name="" id="droneMaxAltitude"></td>
                     </tr>
                     <tr>
                         <th>Coste: </th>
-                        <td><input type="text" name="" id="cost"></td>
+                        <td><input type="text" name="" id="droneCost"></td>
                     </tr>
                     <tr>
                         <th>Pesticidas: </th>
@@ -76,7 +82,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick="addDron()"></td>
+                        <td colspan="2" align="center"><input type="button" name="altaDron" value="ALTA DRON" onclick="addDrone()"></td>
                     </tr>
                 </table>
             </div>
@@ -104,10 +110,7 @@
                     <tr>
                         <th align="center">Trabajos Solicitados: </th>
                         <td align="center">
-                            <select name="trabajos" id="trabajos">
-                                <option value="1">Trabajo 1</option>
-                                <option value="2">Trabajo 2</option>
-                            </select>
+                            <select name="trabajos" id="jobsToDo"></select>
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +119,7 @@
                 </table>
             </div>
             <!-- Zona de muestra de resultados -->
-            <div id="companyConsole"></div>
+            <div id="companyConsole" class="console"></div>
         </div>
     </body>
 </html>
