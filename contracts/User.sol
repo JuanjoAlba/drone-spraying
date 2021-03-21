@@ -45,7 +45,7 @@ contract User {
         tokenContract = IERC20(_tokenC);
     }
     
-    function getUserData () external view returns (string name, uint256 role) {
+    function getUserData () public view returns (string name, uint256 role) {
         
         return (
             userName,
@@ -56,7 +56,7 @@ contract User {
     function addDrone (string _name, uint256 _minAltitude, uint256 _maxAltitude, uint256[] _pesticideList, uint256 _cost) external payable {
         
         // Check that address is a company
-        require( userRole == 1, "Address does not belongs to a company");
+        require( userRole == 1, "Address does not belong to a company");
         
         droneContract.addDrone(_name, _minAltitude, _maxAltitude, _pesticideList, _cost);
     }
@@ -70,7 +70,7 @@ contract User {
     
     function getjobsToDo () external view returns (uint256[5] memory _jobsToDo) {
         
-        require( userRole == 1, "Address does not belongs to a company");
+        require( userRole == 1, "Address does not belong to a company");
         
         _jobsToDo = sprayingContract.getjobsToDo();
         
@@ -79,7 +79,7 @@ contract User {
     
     function toHireDrone (uint256 _plotId) external payable {
         
-        require( userRole == 2, "Address does not belongs to an owner");
+        require( userRole == 2, "Address does not belong to an owner");
         
         bool _plotRegistered = sprayingContract.registerPlot( _plotId);
         
@@ -116,7 +116,7 @@ contract User {
     
     function getjobsDone () external view returns (uint256[] jobsDone) {
         
-        require( userRole == 2, "Address does not belongs to an owner");
+        require( userRole == 2, "Address does not belong to an owner");
         
         return sprayingContract.getjobsDone();        
     }

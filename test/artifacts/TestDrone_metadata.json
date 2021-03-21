@@ -1,0 +1,48 @@
+{
+	"compiler": {
+		"version": "0.4.25+commit.59dbf8f1"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/test/TestDrone.sol": "TestDrone"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/Drone.sol": {
+			"keccak256": "0xb204a5ae32b024beb8669ae554675348c1f859475b89bd28fb07f4cdf149dab1",
+			"urls": [
+				"bzzr://74bcdf2df36026f32b9fa87867d10ea6858aa9e088189988894adf10eab82ae3"
+			]
+		},
+		"localhost/contracts/Interfaces/IDrone.sol": {
+			"keccak256": "0x99bc6f6c023d2cbabefa3166e757da8ba3342dddb47109383da9ece3c01c28dd",
+			"urls": [
+				"bzzr://903990df6553b72a314d939400748ce938910a50bd5ad94729f5d3d044601f21"
+			]
+		},
+		"localhost/test/TestDrone.sol": {
+			"keccak256": "0x3c2c1be5a3a1acfa69af4a8178b72e7f1b0435001f1ee8f7e08e6f0f002b4568",
+			"urls": [
+				"bzzr://8ad0750e60a3cb3490ab90bd4afdbaaa5fc50d6f50837427736439d276650294"
+			]
+		}
+	},
+	"version": 1
+}

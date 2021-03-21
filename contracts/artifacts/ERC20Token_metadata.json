@@ -153,12 +153,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -273,9 +267,9 @@
 	},
 	"sources": {
 		"localhost/ERC20Token.sol": {
-			"keccak256": "0x4d5c34792238a0c70b2c388ffa3fa396402744caaff0aed2b7524493c29e137a",
+			"keccak256": "0x4495716f0cad996670e9e10e858781faf3d8cd4b2e2ba0cd7fea24e271926713",
 			"urls": [
-				"bzzr://00a49fae14279e08d727bca8143b99281076fe5de517929541937c59b528e62f"
+				"bzzr://787771b642de1602128e0899d4f14936df5a7fd74f2f1abec90cd2d9737b9e44"
 			]
 		},
 		"localhost/Interfaces/IERC20.sol": {

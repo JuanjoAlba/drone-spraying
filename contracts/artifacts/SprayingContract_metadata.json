@@ -103,18 +103,6 @@
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"name": "",
-						"type": "string"
-					}
-				],
-				"name": "log",
-				"type": "event"
 			}
 		],
 		"devdoc": {
@@ -131,7 +119,7 @@
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -162,9 +150,9 @@
 			]
 		},
 		"localhost/SprayingContract.sol": {
-			"keccak256": "0x2f0e4b6108814fde3376484fb80c994ea8c46d0e0054f67a6c5d32fe21e63aa7",
+			"keccak256": "0x00e50a9b562d1ebc454171c527c56b589896ecd7812945fe6d72b0a5d0eddc28",
 			"urls": [
-				"bzzr://9b3315ef71acaed57508507b242df0365f1ac893c0c3a26b3f2d3e42cb7baeb8"
+				"bzzr://a6206f4032b7750304efa69831ff9db45f9fc7b51bc28cb7d55468db0608e5bc"
 			]
 		}
 	},

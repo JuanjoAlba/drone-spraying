@@ -247,7 +247,7 @@
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -278,9 +278,9 @@
 			]
 		},
 		"localhost/User.sol": {
-			"keccak256": "0xe4224d19052a0592065010d584ed697c24ed3dd87588a8ef75a4a53ca1554cd2",
+			"keccak256": "0x4251bcca70145a856bca4277c84b52f3e4eeea0a305fcf2b1a263abe69e82ced",
 			"urls": [
-				"bzzr://bd85e1ca5d6d63392242749f3554d7c4229a63236e575f11d84d0344931d0686"
+				"bzzr://efb3ef35f2ccc7f4f3a3395fb1f79cc047f56311a92e94f76f7f800ad3f430a7"
 			]
 		}
 	},

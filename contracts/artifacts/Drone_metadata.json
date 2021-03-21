@@ -28,56 +28,6 @@
 				"constant": true,
 				"inputs": [
 					{
-						"name": "_droneId",
-						"type": "uint256"
-					},
-					{
-						"name": "_minAltitude",
-						"type": "uint256"
-					},
-					{
-						"name": "_maxAltitude",
-						"type": "uint256"
-					}
-				],
-				"name": "checkHigh",
-				"outputs": [
-					{
-						"name": "droneValid",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"name": "_droneId",
-						"type": "uint256"
-					},
-					{
-						"name": "_pesticide",
-						"type": "uint256"
-					}
-				],
-				"name": "checkPesticide",
-				"outputs": [
-					{
-						"name": "droneValid",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
 						"name": "_address",
 						"type": "address"
 					},
@@ -208,16 +158,16 @@
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"localhost/Drone.sol": {
-			"keccak256": "0x114ba56698d9cb956add8fba8841e65a1b33a888ccb0328a7177310700222237",
+			"keccak256": "0xb204a5ae32b024beb8669ae554675348c1f859475b89bd28fb07f4cdf149dab1",
 			"urls": [
-				"bzzr://53abf73e259a21cd933f2aaf507cc683a4f7e0d55f66377847bdaf286a36a273"
+				"bzzr://74bcdf2df36026f32b9fa87867d10ea6858aa9e088189988894adf10eab82ae3"
 			]
 		},
 		"localhost/Interfaces/IDrone.sol": {

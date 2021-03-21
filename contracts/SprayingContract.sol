@@ -15,8 +15,6 @@ import "./Interfaces/ISprayingContract.sol";
  */
 contract SprayingContract is ISprayingContract{
     
-    event log(string);
-    
     // Contracts
     IDrone droneContract;
     IPlot plotContract;
@@ -86,12 +84,8 @@ contract SprayingContract is ISprayingContract{
         require( plotToRequest[_plotToSpray] != 0, "Plot is not waiting to be sprayed");
         (_plotMinAltitude, _plotMaxAltitude, _plotPesticide) = plotContract.getPlot(_plotToSpray);
         
-        emit log("Parcela encontrada");
-
         // get the drone
         (_droneId, _droneCost) = droneContract.searchDroneBy(msg.sender, _plotMinAltitude, _plotMaxAltitude, _plotPesticide);
-        
-        emit log("Drone encontrado");
         
         // spary (Mapping)
         require ( _droneId != 0, "There is no drone that fits to plot characteristics");
@@ -102,13 +96,9 @@ contract SprayingContract is ISprayingContract{
         plotToRequest[_plotToSpray] = 0;
         done[_plotOwner].push(_plotToSpray);
         
-        emit log("Parcela fumigada");
-        
         // Pay job done to company
         tokenContract.transferFrom(_plotOwner, msg.sender, _droneCost);
         
-        emit log("Transferencia realizada");
-
         return _droneId;        
     }
     

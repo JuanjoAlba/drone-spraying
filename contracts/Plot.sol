@@ -44,7 +44,7 @@ contract Plot is IPlot {
         plotCounter += 1;
     }
     
-    function getPlot(uint256 _plotId) external constant returns (
+    function getPlot(uint256 _plotId) public constant returns (
             uint256 minAltitude,
             uint256 maxAltitude,
             uint256 pesticide)
@@ -57,12 +57,12 @@ contract Plot is IPlot {
         );
     }
     
-    function getPlotsByOwner() external view returns (uint256[]) {
+    function getPlotsByOwner() public view returns (uint256[]) {
         
         return plotsByOwner[msg.sender];
     }
 
-    function ownerOf(uint256 _poltId) external view returns (address) {
+    function ownerOf(uint256 _poltId) public view returns (address) {
         
         return plotToOwner[_poltId];
     }
