@@ -88,11 +88,11 @@
 			{
 				"inputs": [
 					{
-						"name": "_plotC",
+						"name": "_droneC",
 						"type": "address"
 					},
 					{
-						"name": "_droneC",
+						"name": "_plotC",
 						"type": "address"
 					},
 					{
@@ -114,45 +114,45 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/SprayingContract.sol": "SprayingContract"
+			"localhost/contracts/SprayingContract.sol": "SprayingContract"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Interfaces/IDrone.sol": {
+		"localhost/contracts/Interfaces/IDrone.sol": {
 			"keccak256": "0x99bc6f6c023d2cbabefa3166e757da8ba3342dddb47109383da9ece3c01c28dd",
 			"urls": [
 				"bzzr://903990df6553b72a314d939400748ce938910a50bd5ad94729f5d3d044601f21"
 			]
 		},
-		"localhost/Interfaces/IERC20.sol": {
+		"localhost/contracts/Interfaces/IERC20.sol": {
 			"keccak256": "0x4e74bcbfe114515d5e188a0de866006b7fef2631d0a48d0571a9d9ae432c5241",
 			"urls": [
 				"bzzr://d237c067d5a945151ad4060558932ddc17acfe4a8238d376dbcda88dcbf00b0b"
 			]
 		},
-		"localhost/Interfaces/IPlot.sol": {
+		"localhost/contracts/Interfaces/IPlot.sol": {
 			"keccak256": "0x2310b3639caf6d903bbfc33df03e8a59ea91ddd59558e37970422d6313750e54",
 			"urls": [
 				"bzzr://44b87137b258a09992ff70bc9de7585eccda0d025c5acddc5c635bb5d9380678"
 			]
 		},
-		"localhost/Interfaces/ISprayingContract.sol": {
+		"localhost/contracts/Interfaces/ISprayingContract.sol": {
 			"keccak256": "0xdcdf287b14f4f7eacce301ca81f6353891c7a9e8581626e77537801eab461788",
 			"urls": [
 				"bzzr://83a8b40b1fd705f9508c4c0fd815c6fee663df1823acc06eafe910a716d5e14d"
 			]
 		},
-		"localhost/SprayingContract.sol": {
-			"keccak256": "0x00e50a9b562d1ebc454171c527c56b589896ecd7812945fe6d72b0a5d0eddc28",
+		"localhost/contracts/SprayingContract.sol": {
+			"keccak256": "0x84c972ed72aecf1437e5c4691b72c0931312ccf9fdd44b63781647717eb3eefc",
 			"urls": [
-				"bzzr://a6206f4032b7750304efa69831ff9db45f9fc7b51bc28cb7d55468db0608e5bc"
+				"bzzr://bf01a78dbd0377a5a55a84dcc920c64ff81a40adcf98b08a9df3ef034779f187"
 			]
 		}
 	},

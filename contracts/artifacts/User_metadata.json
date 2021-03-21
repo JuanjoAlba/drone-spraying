@@ -188,10 +188,6 @@
 						"type": "uint256"
 					},
 					{
-						"name": "_sprayingContract",
-						"type": "address"
-					},
-					{
 						"name": "_droneC",
 						"type": "address"
 					},
@@ -201,6 +197,10 @@
 					},
 					{
 						"name": "_tokenC",
+						"type": "address"
+					},
+					{
+						"name": "_sprayingContract",
 						"type": "address"
 					}
 				],
@@ -242,45 +242,45 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/User.sol": "User"
+			"localhost/contracts/User.sol": "User"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Interfaces/IDrone.sol": {
+		"localhost/contracts/Interfaces/IDrone.sol": {
 			"keccak256": "0x99bc6f6c023d2cbabefa3166e757da8ba3342dddb47109383da9ece3c01c28dd",
 			"urls": [
 				"bzzr://903990df6553b72a314d939400748ce938910a50bd5ad94729f5d3d044601f21"
 			]
 		},
-		"localhost/Interfaces/IERC20.sol": {
+		"localhost/contracts/Interfaces/IERC20.sol": {
 			"keccak256": "0x4e74bcbfe114515d5e188a0de866006b7fef2631d0a48d0571a9d9ae432c5241",
 			"urls": [
 				"bzzr://d237c067d5a945151ad4060558932ddc17acfe4a8238d376dbcda88dcbf00b0b"
 			]
 		},
-		"localhost/Interfaces/IPlot.sol": {
+		"localhost/contracts/Interfaces/IPlot.sol": {
 			"keccak256": "0x2310b3639caf6d903bbfc33df03e8a59ea91ddd59558e37970422d6313750e54",
 			"urls": [
 				"bzzr://44b87137b258a09992ff70bc9de7585eccda0d025c5acddc5c635bb5d9380678"
 			]
 		},
-		"localhost/Interfaces/ISprayingContract.sol": {
+		"localhost/contracts/Interfaces/ISprayingContract.sol": {
 			"keccak256": "0xdcdf287b14f4f7eacce301ca81f6353891c7a9e8581626e77537801eab461788",
 			"urls": [
 				"bzzr://83a8b40b1fd705f9508c4c0fd815c6fee663df1823acc06eafe910a716d5e14d"
 			]
 		},
-		"localhost/User.sol": {
-			"keccak256": "0x4251bcca70145a856bca4277c84b52f3e4eeea0a305fcf2b1a263abe69e82ced",
+		"localhost/contracts/User.sol": {
+			"keccak256": "0x5ca1261312cb4c0d13494478b8327202588f1235528ed4da5eb2b4d492daf02f",
 			"urls": [
-				"bzzr://efb3ef35f2ccc7f4f3a3395fb1f79cc047f56311a92e94f76f7f800ad3f430a7"
+				"bzzr://230c68aff3fbb0fb6ad1b4865432c29d109134926a8ec0c6e5a6a3650b04ed44"
 			]
 		}
 	},

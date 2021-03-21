@@ -2,8 +2,8 @@
 const ABI_USER = [{"constant":true,"inputs":[],"name":"getUserData","outputs":[{"name":"name","type":"string"},{"name":"role","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_amount","type":"uint256"}],"name":"approveToken","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getjobsDone","outputs":[{"name":"jobsDone","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_amount","type":"uint256"}],"name":"getCash","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_plotId","type":"uint256"}],"name":"sprayPlot","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_plotId","type":"uint256"}],"name":"toHireDrone","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getTokenBalance","outputs":[{"name":"_balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"string"},{"name":"_minAltitude","type":"uint256"},{"name":"_maxAltitude","type":"uint256"},{"name":"_pesticideList","type":"uint256[]"},{"name":"_cost","type":"uint256"}],"name":"addDrone","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"string"},{"name":"_minAltitude","type":"uint256"},{"name":"_maxAltitude","type":"uint256"},{"name":"_pesticide","type":"uint256"}],"name":"addPlot","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getjobsToDo","outputs":[{"name":"_jobsToDo","type":"uint256[5]"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"string"},{"name":"_role","type":"uint256"},{"name":"_sprayingContract","type":"address"},{"name":"_droneC","type":"address"},{"name":"_plotC","type":"address"},{"name":"_tokenC","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"plotId","type":"uint256"}],"name":"jobRequested","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"plotId","type":"uint256"}],"name":"jobDone","type":"event"}];
 
 //Contratos
-var company_contract = "0x70c7A100ebc2fCF2f73Be17052958985218e6df6";
-var owner_contract = "0x80704DaF836f6D2a2fF06BC165E5205b4d53229c";
+var company_contract = "0x3FBd08504215e50F82C93572dBf64B7fEE9C65FB";
+var owner_contract = "0x469f8eFaBa4ff2821323D697E7c58C547916A627";
 
 // web3 object
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
@@ -192,6 +192,8 @@ function getPlotsToSpray() {
  *
  */
 async function sprayPlot() {
+
+    var idPlot = document.getElementById('jobsToDo').value;
 
     companyInstance.methods.sprayPlot(idPlot).send({from: companyAccount, gas: 1000000}, function(error, result) {
         if(!error){

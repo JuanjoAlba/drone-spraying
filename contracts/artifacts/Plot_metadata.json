@@ -101,7 +101,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Plot.sol": "Plot"
+			"localhost/contracts/Plot.sol": "Plot"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -112,13 +112,13 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Interfaces/IPlot.sol": {
+		"localhost/contracts/Interfaces/IPlot.sol": {
 			"keccak256": "0x2310b3639caf6d903bbfc33df03e8a59ea91ddd59558e37970422d6313750e54",
 			"urls": [
 				"bzzr://44b87137b258a09992ff70bc9de7585eccda0d025c5acddc5c635bb5d9380678"
 			]
 		},
-		"localhost/Plot.sol": {
+		"localhost/contracts/Plot.sol": {
 			"keccak256": "0xad6604e0ba1521d2e412f92d9b67b13e1c58fcc66b6b618edaf9115fcbf5260f",
 			"urls": [
 				"bzzr://c90c89ac313697be8244efae96c33b8618988cb95c436f8a21430305435370ea"

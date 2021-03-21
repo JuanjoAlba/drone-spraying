@@ -153,24 +153,24 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/Drone.sol": "Drone"
+			"localhost/contracts/Drone.sol": "Drone"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"localhost/Drone.sol": {
+		"localhost/contracts/Drone.sol": {
 			"keccak256": "0xb204a5ae32b024beb8669ae554675348c1f859475b89bd28fb07f4cdf149dab1",
 			"urls": [
 				"bzzr://74bcdf2df36026f32b9fa87867d10ea6858aa9e088189988894adf10eab82ae3"
 			]
 		},
-		"localhost/Interfaces/IDrone.sol": {
+		"localhost/contracts/Interfaces/IDrone.sol": {
 			"keccak256": "0x99bc6f6c023d2cbabefa3166e757da8ba3342dddb47109383da9ece3c01c28dd",
 			"urls": [
 				"bzzr://903990df6553b72a314d939400748ce938910a50bd5ad94729f5d3d044601f21"
