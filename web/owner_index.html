@@ -9,25 +9,26 @@
 
             start();
 
-            // Función para manejar las pestañas
+            // Menu
             function clickHandle(evt, idMenu) {
-              let i, menucontent, tablinks;
-            
-              // This is to clear the previous clicked content.
-              menucontent = document.getElementsByClassName("menucontent");
-              for (i = 0; i < menucontent.length; i++) {
-                menucontent[i].style.display = "none";
-              }
-            
-              // Set the tab to be "active".
-              tablinks = document.getElementsByClassName("tablinks");
-              for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-              }
-            
-              // Display the clicked tab and set it to active.
-              document.getElementById(idMenu).style.display = "block";
-              evt.currentTarget.className += " active";
+                document.getElementById('ownerConsole').innerHTML = '';
+                let i, menucontent, tablinks;
+                
+                // This is to clear the previous clicked content.
+                menucontent = document.getElementsByClassName("menucontent");
+                for (i = 0; i < menucontent.length; i++) {
+                    menucontent[i].style.display = "none";
+                }
+                
+                // Set the tab to be "active".
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                
+                // Display the clicked tab and set it to active.
+                document.getElementById(idMenu).style.display = "block";
+                evt.currentTarget.className += " active";
               
             }
 
@@ -96,7 +97,7 @@
             </div>
             <!-- Solicitar trabajos -->
             <div id="asignarTrabajo" class="menucontent">
-                <table style="width:100%">
+                <table style="width:100%; line-height:100px;">
                     <colgroup>
                         <col span="1" style="width: 25%;">
                         <col span="1" style="width: 25%;">
@@ -110,13 +111,12 @@
                         <td><input type="text" name="amount" id="amount"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="button" name="requestJobButton" value="Solicitar Trabajo" onclick="registerPlotToSpray()"></td>
+                        <td colspan="4" align="center"><input type="button" name="requestJobButton" value="Solicitar Trabajo" onclick="registerPlotToSpray()"></td>
                     </tr>
                     <tr>
-                        <th colspan="4">Revisar trabajos realizados</th>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center"><input type="button" name="jobsDoneButton" value="Trabajos Terminados" onclick="getjobsDone()"></td>
+                        <th>Revisar trabajos realizados</th>
+                        <td align="center"><input type="button" name="jobsDoneButton" value="Trabajos Terminados" onclick="getjobsDone()"></td>
+                        <td colspan="2"/>
                     </tr>
                 </table>
             </div>

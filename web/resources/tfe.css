@@ -83,6 +83,7 @@
 }
 
 .console {
+  text-align: center;
   position: relative;
   height: auto;
   width: auto;

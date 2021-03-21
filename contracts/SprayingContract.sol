@@ -36,10 +36,10 @@ contract SprayingContract is ISprayingContract{
     mapping (address => uint256[]) internal done;
 
     // Constructor
-    constructor (address _plotC, address _droneC, address _tokenC) public {
+    constructor (address _droneC, address _plotC, address _tokenC) public {
         
+		droneContract = IDrone(_droneC);
         plotContract = IPlot(_plotC);
-        droneContract = IDrone(_droneC);
         tokenContract = IERC20(_tokenC);
         
     }

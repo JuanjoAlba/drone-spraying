@@ -36,10 +36,10 @@ contract("User", function (accounts) {
     this.droneDep = await Drone.deployed({from: droneAcc});
     this.plotDep = await Plot.deployed({from: plotAcc});
     this.erc20Dep = await ERC20.deployed({from: erc20Acc});
-    this.scontractDep = await SContract.deployed(this.plotDep.address, this.droneDep.address, this.erc20Dep.address, {from: scontractAcc});
+    this.scontractDep = await SContract.deployed(this.droneDep.address, this.plotDep.address, this.erc20Dep.address, {from: scontractAcc});
     // Como deployed genera un singleton, uso new para poder tener dos usuarios.
-    this.companyDep = await User.new('Company', role_C, this.scontractDep.address, this.droneDep.address, this.plotDep.address, this.erc20Dep.address, {from: companyAcc}); 
-    this.ownerDep = await User.new('Owner', role_O, this.scontractDep.address, this.droneDep.address, this.plotDep.address, this.erc20Dep.address, {from: ownerAcc}); 
+    this.companyDep = await User.new('Company', role_C, this.droneDep.address, this.plotDep.address, this.erc20Dep.address, this.scontractDep.address,{from: companyAcc}); 
+    this.ownerDep = await User.new('Owner', role_O, this.droneDep.address, this.plotDep.address, this.erc20Dep.address, this.scontractDep.address,{from: ownerAcc}); 
     
     console.log('Contratos desplegados');
   });
@@ -98,7 +98,7 @@ contract("User", function (accounts) {
   it("TestApprove: Se comprueba que se aprueba una cantidad de tokens para que el contrato pueda pagar", async function () {
      
     // Primero necesitamos darle tokens al propietario
-    await this.ownerDep.getCash (200, {from:ownerAcc});
+    await this.ownerDep.getCash (200);
     // Permitimos al contrato gestor utilizar esos tokens
     await this.ownerDep.approveToken(50);
     // Recuperamos del contrato de tokens los datos
@@ -106,5 +106,26 @@ contract("User", function (accounts) {
     assert.equal(allowance, 50);
   });
 
+  it("TestSprayPlot: Se fumiga una parcela", async function () {
+     
+    // Registramos un dron
+    await this.companyDep.addDrone('Drone-1', 10, 40, [1,2,3], 25, {from:companyAcc});
+    // Registramos una parcela la parcela
+    await this.ownerDep.addPlot('Plot-1', 10, 40, 1, {from:ownerAcc});
+    // Asignamos tokens al propietario
+    await this.ownerDep.getCash (200);
+    // Ahora se contrata el trabajo
+    await this.ownerDep.toHireDrone(1, {from:ownerAcc});
+    // Permitimos al contrato gestor utilizar esos tokens
+    await this.ownerDep.approveToken(50);
+    // Fumigamos la parcela
+    let response = await this.companyDep.sprayPlot(1, {from:companyAcc});
+    truffleAssert.eventEmitted(response, "jobDone", (evento) =>{
+      return evento.plotId == 1;
+    })
+    // Comprobamos que se ha pagado la fumigación
+    let balance = await this.companyDep.getTokenBalance();
+    assert.equal(balance, 25);
+  });
   
 });

@@ -32,17 +32,17 @@ contract User {
     uint256 userRole;
          
     // Add new User
-    constructor (string _name, uint256 _role, address _sprayingContract, address _droneC, address _plotC, address _tokenC) public {
+    constructor (string _name, uint256 _role, address _droneC, address _plotC, address _tokenC, address _sprayingContract) public {
         
         require (_role == ROLE_COMPANY || _role == ROLE_OWNER, "Not a valid role");
         
         userName = _name;
         userRole = _role;
         
-        sprayingContract = ISprayingContract(_sprayingContract);
         droneContract = IDrone(_droneC);
         plotContract = IPlot(_plotC);
         tokenContract = IERC20(_tokenC);
+		sprayingContract = ISprayingContract(_sprayingContract);
     }
     
     function getUserData () public view returns (string name, uint256 role) {

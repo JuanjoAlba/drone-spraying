@@ -3,6 +3,7 @@ TFE curso desarrollo aplicaciones blockchain
 
 
 remixd remixd -s D:\trabajos\projects\drone-spraying\contracts --remix-ide https://remix.ethereum.org
+remixd remixd -s D:\trabajos\projects\drone-spraying --remix-ide https://remix.ethereum.org
 
 # referencias
 ERC721

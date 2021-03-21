@@ -30,7 +30,7 @@ module.exports = async function (deployer) {
 	let droneDep = await deployer.deploy(Drone, {from: droneAcc});
 	let plotDep = await deployer.deploy(Plot, {from: plotAcc});
 	let erc20Dep = await deployer.deploy(ERC20, {from: erc20Acc});
-	let scontractDep = await deployer.deploy(SContract, plotDep.address, droneDep.address, erc20Dep.address, {from: scontractAcc});
-	let companyDep = await deployer.deploy(User, 'Company', 1, scontractDep.address, droneDep.address, plotDep.address, erc20Dep.address, {from: companyAcc}); 
-	let ownerDep = await deployer.deploy(User, 'Owner', 2, scontractDep.address, droneDep.address, plotDep.address, erc20Dep.address, {from: ownerAcc}); 
+	let scontractDep = await deployer.deploy(SContract, droneDep.address, plotDep.address, erc20Dep.address, {from: scontractAcc});
+	let companyDep = await deployer.deploy(User, 'Company', 1, droneDep.address, plotDep.address, erc20Dep.address, scontractDep.address, {from: companyAcc}); 
+	let ownerDep = await deployer.deploy(User, 'Owner', 2, droneDep.address, plotDep.address, erc20Dep.address, scontractDep.address, {from: ownerAcc}); 
 };
